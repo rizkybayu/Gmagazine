@@ -1,0 +1,35 @@
+<div class="isi">
+            <div class="col-lg-6">
+              <div class="kotak2">
+                  <img src="images/news/alien.jpg" class="img-responsive">
+                  <div class="ket">
+                  <div class="tag">Article</div>
+                      <p><a href="#">PS4 NOW PRE ORDER !</a></p>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="isi">
+            <div class="col-lg-6">
+              <div class="kotak2">
+                  <img src="images/news/ps4.png" class="img-responsive">
+                  <div class="ket">
+                  <div class="tag">Article</div>
+                      <p><a href="#">PS4 NOW PRE ORDER !</a></p>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+                <div class="isi">
+            <div class="col-lg-6">
+              <div class="kotak2">
+                  <img src="images/news/amd.jpg" class="img-responsive">
+                  <div class="ket">
+                  <div class="tag">Article</div>
+                      <p><a href="#">PS4 NOW PRE ORDER !</a></p>
+                  </div>
+              </div>
+            </div>
+        </div>

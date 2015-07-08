@@ -1,7 +1,6 @@
     <!--header -->
 @include('header')
     <!--end header-->
-
 <header>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse garis" role="navigation">
@@ -69,59 +68,26 @@
     <div class="container">
         <div class="row">
     <div class="col-lg-12">
-
+        @foreach ($data as $val )
         <div class="isi">
             <div class="col-lg-6">
             <div class="tambah">
               <div class="kotak2">
                   <img src="images/news/mortal.jpg" class="img-responsive">
                   <div class="ket">
-                  <div class="tag">Article</div>
-                      <p><a href="#">MORTAL KOMBAT X RELEASE !</a></p>
+                  <div class="tag">{{$val->kategori}}</div>
+                        <p><a href="{{ url('artikel/'.$val->id) }}">{{ $val->Judul }}</a></p>
                   </div>
               </div>
             </div>
             </div>
         </div>
+        @endforeach
 
-        <div class="isi">
-            <div class="col-lg-6">
-              <div class="kotak2">
-                  <img src="images/news/alien.jpg" class="img-responsive">
-                  <div class="ket">
-                  <div class="tag">Article</div>
-                      <p><a href="#">PS4 NOW PRE ORDER !</a></p>
-                  </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="isi">
-            <div class="col-lg-6">
-              <div class="kotak2">
-                  <img src="images/news/ps4.png" class="img-responsive">
-                  <div class="ket">
-                  <div class="tag">Article</div>
-                      <p><a href="#">PS4 NOW PRE ORDER !</a></p>
-                  </div>
-              </div>
-            </div>
-        </div>
-
-                <div class="isi">
-            <div class="col-lg-6">
-              <div class="kotak2">
-                  <img src="images/news/amd.jpg" class="img-responsive">
-                  <div class="ket">
-                  <div class="tag">Article</div>
-                      <p><a href="#">PS4 NOW PRE ORDER !</a></p>
-                  </div>
-              </div>
-            </div>
-        </div>
+        
 
         <center>
-        <nav>
+        <nav style="clear:both">
           <ul class="pagination">
             <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
             <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
