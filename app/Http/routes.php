@@ -19,8 +19,10 @@
 //   return view('artikel');
 //});
 
+//user interface
 Route::get('/','GameController@index');
 Route::get('/artikel/Battlefield','GameController@lihatArtikel');
 
 //admin
-Route::get('/naon','AdminController@index');
+Route::get('/mimin','AdminController@login');
+Route::get('/dash','AdminController@index');
