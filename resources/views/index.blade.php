@@ -52,9 +52,11 @@
         <li><img src="data1/images/3.jpg" alt="3" title="3" id="wows1_2"/></li>
     </ul></div>
     <div class="ws_bullets"><div>
-        <a href="#" title="1"><span><img src="data1/tooltips/1.jpg" alt="1"/>1</span></a>
-        <a href="#" title="2"><span><img src="data1/tooltips/2.jpg" alt="2"/>2</span></a>
-        <a href="#" title="3"><span><img src="data1/tooltips/3.jpg" alt="3"/>3</span></a>
+    <?= $a=1;?>
+    @foreach($data2 as $slide)
+        <a href="#" title="1"><span><img src="{{$slide->foto}}" alt="<?= $a; ?>"/><?= $a; ?></span></a>
+    <?= $a++; ?>
+    @endforeach
     </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">css image gallery</a> by WOWSlider.com v8.2</div>
 <div class="ws_shadow"></div>
 </div>  
@@ -73,7 +75,7 @@
             <div class="col-lg-6">
             <div class="tambah">
               <div class="kotak2">
-                  <img src="images/news/mortal.jpg" class="img-responsive">
+                  <img src="{{$val->foto}}" class="img-responsive">
                   <div class="ket">
                   <div class="tag">{{$val->kategori}}</div>
                         <p><a href="{{ url('artikel/'.$val->id) }}">{{ $val->Judul }}</a></p>

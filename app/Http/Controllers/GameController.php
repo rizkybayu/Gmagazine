@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
+use App\Database\Model\Slider;
 
 class GameController extends Controller
 {
@@ -18,7 +19,8 @@ class GameController extends Controller
     public function index()
     {
         $data = Game::get();
-        return view('index',compact('data'));
+        $data2 = Slider::get();
+        return view('index',compact('data','data2'));
     }
 
     /**
@@ -27,6 +29,10 @@ class GameController extends Controller
      * @return Response
      */
     public function lihatArtikel()
+    {
+        return view('artikel');
+    }
+    public function lihat()
     {
         return view('artikel');
     }
