@@ -12,7 +12,7 @@ use App\Database\Model\Slider;
 class GameController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * INI DIPAKAI DI INDEX !!!
      *
      * @return Response
      */

@@ -19,9 +19,9 @@
         <div class="row text-center  ">
             <div class="col-md-12">
                 <br /><br />
-                <h2> Binary Admin : Register</h2>
+                <h2>Daftar Admin</h2>
                
-                <h5>( Register yourself to get access )</h5>
+                <h5>( Untuk Mendaftarkan Admin )</h5>
                  <br />
             </div>
         </div>
@@ -30,35 +30,35 @@
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                        <strong>  New User ? Register Yourself </strong>  
+                        <strong> GMagazine </strong>  
                             </div>
                             <div class="panel-body">
                                 <form role="form">
 <br/>
                                         <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                                            <input type="text" class="form-control" placeholder="Your Name" />
+                                            <input type="text" class="form-control" placeholder="Nama" />
                                         </div>
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" placeholder="Desired Username" />
+                                            <input type="text" class="form-control" placeholder="Username" />
                                         </div>
                                          <div class="form-group input-group">
                                             <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" placeholder="Your Email" />
+                                            <input type="text" class="form-control" placeholder="Email" />
                                         </div>
                                       <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control" placeholder="Enter Password" />
+                                            <input type="password" class="form-control" placeholder="Password" />
                                         </div>
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control" placeholder="Retype Password" />
+                                            <input type="password" class="form-control" placeholder="Ketik Ulang Password" />
                                         </div>
                                      
-                                     <a href="index.html" class="btn btn-success ">Register Me</a>
+                                     <a href="index.html" class="btn btn-success ">Tambah Admin</a>
                                     <hr />
-                                    Already Registered ?  <a href="login.html" >Login here</a>
+                                    <a href="{{url('/dash')}}" >Kembali</a>
                                     </form>
                             </div>
                            

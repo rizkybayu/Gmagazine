@@ -22,37 +22,56 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form role="form">
+                                    
+                                    {!! Form::open() !!}
+                                    <!-- <form role="form"> -->
+
                                         <div class="form-group">
-                                            <label>Masukan Judul</label>
-                                            <input class="form-control">
+                                            {!! Form::label('Judul :') !!}
+                                            {!! Form::text('judul',null,['class'=>'form-control','placeholder'=>'Masukan Judul']) !!}
+                                            <!-- <label>Masukan Judul</label>
+                                            <input class="form-control"> -->
                                             <!-- <p class="help-block"></p> -->
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Masukan Gambar Cover</label>
-                                            <input type="file">
+                                            {!! Form::label('Masukan Foto Artikel :') !!}
+                                            {!! Form::file('foto',['class'=>null]) !!}
+                                            <!-- <label>Masukan Gambar Cover</label>
+                                            <input type="file" --> 
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Isi Artikel</label>
-                                            <textarea class="form-control" rows="3"></textarea>
+                                            {!! Form::label('Isi Artikel :') !!}
+                                            {!! Form::textarea('isi',null, ['class'=>'form-control','row'=>'3','placeholder'=>'Masukan Isi Artikel']) !!}
+
+                                            <!-- <label>Isi Artikel</label>
+                                            <textarea class="form-control" rows="3"></textarea> -->
                                         </div>
 
+                                        <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label>Kategori</label>
-                                            <select class="form-control">
+                                            <div class="form-group">
+                                            {!! Form::label('Kategori :') !!}
+                                            {!! Form::select('kategori',['Berita','Game','Harga','Hardware'], null, ['class'=>'form-control']) !!}
+                                            </div>
+                                        </div>
+                                            <!-- <select class="form-control">
                                                 <option>Berita</option>
                                                 <option>Games</option>
                                                 <option>Artikel</option>
                                                 <option>Harga</option>
-                                            </select>
+                                            </select> -->
                                         </div>
 
-                                        <button type="submit" class="btn btn-default">Simpan</button>
+                                        <div class="col-sm-3" style="clear:both">
+                                        {!!Form::submit('Submit!',['class' => 'btn btn-default','name'=>'simpan']) !!}
+                                        <!-- <button type="submit" class="btn btn-default">Simpan</button> -->
                                         <button type="reset" class="btn btn-primary">Reset</button>
+                                        </div>
 
-                                    </form>
+                                    <!-- </form> -->
+                                    {!! Form::close() !!}
                                 </div>
                                 
                             </div>

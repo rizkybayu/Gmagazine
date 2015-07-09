@@ -12,7 +12,7 @@ use App\Database\Model\Slider;
 class AdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * INI DI PAKAI DI HALAMAN ADMIN !!!
      *
      * @return Response
      */
