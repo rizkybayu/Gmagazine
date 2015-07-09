@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     
-                                    {!! Form::open() !!}
+                                    {!! Form::open(array('url' => '/store', 'method' => 'POST')) !!}
                                     <!-- <form role="form"> -->
 
                                         <div class="form-group">
@@ -53,7 +53,7 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                             {!! Form::label('Kategori :') !!}
-                                            {!! Form::select('kategori',['Berita','Game','Harga','Hardware'], null, ['class'=>'form-control']) !!}
+                                            {!! Form::select('kategori',['Berita'=>'Berita','Game'=>'Game','Harga'=>'Harga','Hardware'=>'Hardware'], null, ['class'=>'form-control']) !!}
                                             </div>
                                         </div>
                                             <!-- <select class="form-control">

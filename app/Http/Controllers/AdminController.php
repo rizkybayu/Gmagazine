@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Slider;
 
+
 class AdminController extends Controller
 {
     /**
@@ -30,6 +31,20 @@ class AdminController extends Controller
     {
         return view('admin.form');
     }
+    public function store(Request $request) //menyimpan
+    {
+        $game = new Game();
+        $game->judul=$request->input('judul');
+        // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
+        $game->foto='images/news/ps4.png';
+        $game->isi=$request->input('isi');
+        $game->kategori=$request->input('kategori');
+        $game->pembuat= 'Rizky Bayu';
+        $game->save();
+
+        return redirect('/lihatartikel');
+
+    }
 
     public function lihat()
     {
@@ -40,5 +55,6 @@ class AdminController extends Controller
     public function tambahadmin(){
         return view('admin.registeration');
     }
+
 
 }

@@ -30,3 +30,4 @@ Route::get('/dash','AdminController@index'); //dashboard admin
 Route::get('/tambahartikel','AdminController@tambah'); //menu untuk tambah artikel admin
 Route::get('/lihatartikel','AdminController@lihat'); //menu untuk melihat artikel
 Route::get('/tambahadmin','AdminController@tambahadmin'); //menu untuk tambah admin
+Route::post('/store','AdminController@store');
