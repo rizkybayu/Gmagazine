@@ -18,7 +18,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $data = Game::get();
+        $data = Game::paginate(4);
         $data2 = Slider::get();
         return view('index',compact('data','data2'));
     }
