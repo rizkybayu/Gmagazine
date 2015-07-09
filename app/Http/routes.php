@@ -28,3 +28,4 @@ Route::get('/lihat','GameController@lihat');
 Route::get('/mimin','AdminController@login');
 Route::get('/dash','AdminController@index');
 Route::get('/tambahartikel','AdminController@tambah');
+Route::get('/lihatartikel','AdminController@lihat');
