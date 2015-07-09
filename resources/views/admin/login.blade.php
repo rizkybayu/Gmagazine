@@ -38,7 +38,7 @@
                                             </span>
                                         </div>
                                      
-                                     <a href="#" class="btn btn-primary ">Login Now</a>
+                                     <a href="{{url('/dash')}}" class="btn btn-primary ">Login Now</a><!-- nanti ganti biar dinamis -->
                                     <hr />
                                     Not register ? <a href="registeration.html" >click here </a> 
                                     </form>

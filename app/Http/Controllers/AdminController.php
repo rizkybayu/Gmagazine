@@ -24,6 +24,11 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
+    public function tambah()
+    {
+        return view('admin.form');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -23,6 +23,8 @@
 Route::get('/','GameController@index');
 Route::get('/artikel','GameController@lihatArtikel');
 Route::get('/lihat','GameController@lihat');
+
 //admin
 Route::get('/mimin','AdminController@login');
 Route::get('/dash','AdminController@index');
+Route::get('/tambahartikel','AdminController@tambah');
