@@ -25,7 +25,8 @@ Route::get('/artikel','GameController@lihatArtikel');
 Route::get('/lihat','GameController@lihat');
 
 //admin
-Route::get('/mimin','AdminController@login');
-Route::get('/dash','AdminController@index');
-Route::get('/tambahartikel','AdminController@tambah');
-Route::get('/lihatartikel','AdminController@lihat');
+Route::get('/mimin','AdminController@login'); //untuk login admin
+Route::get('/dash','AdminController@index'); //dashboard admin
+Route::get('/tambahartikel','AdminController@tambah'); //menu untuk tambah artikel admin
+Route::get('/lihatartikel','AdminController@lihat'); //menu untuk melihat artikel
+Route::get('/tambahadmin','AdminController@tambahadmin'); //menu untuk tambah admin

@@ -33,8 +33,12 @@ class AdminController extends Controller
 
     public function lihat()
     {
-        $list_game = Game::paginate(20);
+        $list_game = Game::paginate(10);
         return view('admin.table',compact('list_game'));
+    }
+
+    public function tambahadmin(){
+        return view('admin.registeration');
     }
 
 }

@@ -45,56 +45,13 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
                         <a  href="{{url('/dash')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                       <li>
-                        <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
-                    </li>
-                    <li>
-                        <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
-                    </li>
-                           <li  >
-                        <a  href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
-                    </li>   
-                      <li  >
                         <a  href="{{url('/lihatartikel')}}"><i class="fa fa-table fa-3x"></i>Daftar Artikel</a>
-                    </li>
-                    <li  >
-                        <a class=""  href="{{url('/tambahartikel')}}"><i class="fa fa-edit fa-3x"></i>Tambah Artikel</a>
-                    </li>               
-                    <li  >
-                        <a   href="login.html"><i class="fa fa-bolt fa-3x"></i> Login</a>
-                    </li>   
-                     <li  >
-                        <a   href="registeration.html"><i class="fa fa-laptop fa-3x"></i> Registeration</a>
-                    </li>   
-                                       
+                      </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-                               
-                            </li>
-                        </ul>
-                      </li>  
-                  <li  >
-                        <a   href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                        <a class=""  href="{{url('/tambahartikel')}}"><i class="fa fa-edit fa-3x"></i>Tambah Artikel</a>
+                    </li>                 
+                     <li>
+                        <a   href="{{url('/tambahadmin')}}"><i class="fa fa-laptop fa-3x"></i>Tambah Admin</a>
                     </li>   
                 </ul>
                

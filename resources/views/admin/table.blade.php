@@ -41,22 +41,21 @@
                                             <td>{{$game->foto}}</td>
                                             <td><div style="height:40px; overflow:hidden">{{$game->isi}}</div></td>
                                             <td class="center">{{$game->kategori}}</td>
-                                            <td class="center">-</td>
+                                            <td class="center"><a href="{{$game->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{$game->id}}"><i class="fa fa-trash"></i></a> </td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-
                         <center>
                             <nav style="clear:both">
                                 <div class="pagination">
-                                {!!$list_game->render()!!}
+                                {!! str_replace('/?', '?', $list_game->render()) !!}
                                 </div>
                             </nav>
                         </center>
+                        </div>
                     </div>
                     <!--End Advanced Tables -->
                 </div>
