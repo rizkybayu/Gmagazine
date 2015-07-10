@@ -33,27 +33,36 @@
                         <strong> GMagazine </strong>  
                             </div>
                             <div class="panel-body">
+                                <!-- NOTIFIKASI -->
+                                    @if(Session::has('flash_message'))
+                                        <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+                                    @endif
+                                <!-- BATAS NOTIFIKASI -->
                                 {!! Form::open(array('url' => '/tambah_admin', 'method' => 'POST')) !!}
 <br/>
-                                        <div class="form-group input-group">
+                                        <div class="form-group input-group @if ($errors->has('nama')) has-error @endif">
                                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
                                             {!! Form::text('nama',null,['class'=>'form-control','placeholder'=>'Nama Lengkap']) !!}
+                                            @if ($errors->has('nama')) <p class="help-block">{{ $errors->first('nama') }}</p> @endif
                                             <!-- <input type="text" class="form-control" placeholder="Nama" /> -->
                                         </div>
-                                     <div class="form-group input-group">
+                                     <div class="form-group input-group @if ($errors->has('user')) has-error @endif">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
                                             {!! Form::text('user',null,['class'=>'form-control','placeholder'=>'Username']) !!}
+                                            @if ($errors->has('user')) <p class="help-block">{{ $errors->first('user') }}</p> @endif
                                             <!-- <input type="text" class="form-control" placeholder="Username" /> -->
                                         </div>
-                                         <div class="form-group input-group">
+                                         <div class="form-group input-group @if ($errors->has('email')) has-error @endif">
                                             <span class="input-group-addon">@</span>
                                             {!! Form::text('email',null,['class'=>'form-control','placeholder'=>'Email']) !!}
+                                            @if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif
                                             <!-- <input type="text" class="form-control" placeholder="Email" /> -->
                                         </div>
-                                      <div class="form-group input-group">
+                                      <div class="form-group input-group @if ($errors->has('pass')) has-error @endif">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
                                             <!-- {!! Form::password('pass',null,['class'=>'form-control','placeholder'=>'Password']) !!} -->
                                             {!! Form::password('pass', array('placeholder' => 'Password','class' => 'form-control')); !!}
+                                            @if ($errors->has('pass')) <p class="help-block">{{ $errors->first('pass') }}</p> @endif
                                             <!-- <input type="password" class="form-control" placeholder="Password" /> -->
                                         </div>
                                      <!-- <div class="form-group input-group">

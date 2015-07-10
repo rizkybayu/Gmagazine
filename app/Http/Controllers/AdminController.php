@@ -11,6 +11,7 @@ use App\Database\Model\Admin;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
 use App\Http\Requests\ArtikelRequest;
+use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -71,7 +72,7 @@ class AdminController extends Controller
     public function tambahadmin(){
         return view('admin.registeration');
     }
-    public function tambah_admin(Request $request2)
+    public function tambah_admin(AdminRequest $request2)
     {
         $admin = new Admin();
         $admin->nama_admin=$request2->input('nama');
@@ -81,6 +82,7 @@ class AdminController extends Controller
         $admin->tgl_jadi= Carbon::now();
         $admin->save();
 
+        \Session::flash('flash_message','Berhasil Menambahkan Admin !');
         return redirect('/tambahadmin');
     }
 // BATAS UNTUK MEMBUAT ADMIN
