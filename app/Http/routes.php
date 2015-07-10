@@ -39,3 +39,6 @@ Route::post('/store','AdminController@store'); //UNTUK MENYIMPAN
 Route::post('/tambah_admin','AdminController@tambah_admin'); //UNTUK MENYIMPAN
 //Route::delete('/hapus/{id}','AdminController@hapus'); //menghapus
 Route::get('/hapus/{id}','AdminController@hapus');
+
+Route::get('/edit/{id}','AdminController@edit'); //untuk mengambil id untuk mengubah
+Route::put('/ubah/{id}','AdminController@ubah'); //proses ubah

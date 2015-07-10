@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
-use App\Http\Requests;
+
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Admin;
@@ -64,6 +64,31 @@ class AdminController extends Controller
 
         \Session::flash('flash_message','Berhasil menghapus artikel !');
         return redirect('/lihatartikel');
+    }
+
+    public function ubah($id,ArtikelRequest $request)
+    {
+        $game = Game::find($id);
+        $game->judul=$request->input('judul');
+        // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
+        $game->foto='images/news/ps4.png';
+        $game->isi=$request->input('isi');
+        $game->kategori=$request->input('kategori');
+        $game->pembuat= 'Rizky Bayu';
+        $game->tag = $request->input('tag');
+        $game->tgl_buat= Carbon::now();
+        $game->save();
+
+
+        \Session::flash('flash_message','Berhasil mengubah artikel !');
+        return redirect('/lihatartikel');
+    }
+
+    public function edit($id)
+    {
+        $edit = Game::find($id);
+
+        return view('admin.ubahadmin',compact('edit'));
     }
 //BATAS MEMBUAT ARTIKEL
 
