@@ -78,7 +78,7 @@
                   <img src="{{$val->foto}}" class="img-responsive">
                   <div class="ket">
                   <div class="tag">{{$val->kategori}}</div>
-                        <p><a href="{{ url('artikel/'.$val->id) }}">{{ $val->Judul }}</a></p>
+                        <p><a href="{{ url('artikel',$val->id) }}">{{ $val->Judul }}</a></p>
                   </div>
               </div>
             </div>

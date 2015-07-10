@@ -49,6 +49,11 @@
                                             <textarea class="form-control" rows="3"></textarea> -->
                                         </div>
 
+                                        <div class="form-group">
+                                            {!! Form::label('Tags :') !!}
+                                            {!! Form::text('tag',null,['class'=>'form-control','placeholder'=>'Ex : #RPG #ADVENTURE']) !!}
+                                        </div>
+
                                         <div class="col-sm-3">
                                         <div class="form-group">
                                             <div class="form-group">

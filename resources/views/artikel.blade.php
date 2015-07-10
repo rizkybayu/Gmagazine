@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GMag</title>
+    <title>{{$artikel2->Judul}}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -34,16 +34,7 @@
 </head>
 
 <body>
-<!-- for comment fb -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.3";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- for coment fb -->
+
 <header>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse garis" role="navigation">
@@ -112,8 +103,8 @@
     <div class="col-sm-12">
     <!--artikel-->
         <div class="col-sm-9 col-xs-12">
-          <div class="judul"><h2>Battlefield Hardline now is pre order !</h2>
-              <p><b>Rizky Bayu</b> , <i>31 Juli 2015</i></p>
+          <div class="judul"><h2>{{$artikel2->Judul}}</h2>
+              <p><b>{{$artikel2->pembuat}}</b> , <i>{{ date('d F, Y', strtotime($artikel2->tgl_buat)) }}</i></p>
               <hr>
           </div><!-- judul -->
 
@@ -123,16 +114,12 @@
 
         <div class="isi-artikel">
             <p>
-            Battlefield Hardline's Criminal Activity DLC is set in an alternate reality in which, variously, night clubs, malls, apartment blocks and derelict logging concerns are patrolled by anthropomorphic gun-toting... oh wait, they're just masks. That makes more sense.
-            Oh well, I'm less excited now I've realised this isn't a gritty Sonic reboot. Still, I've started this post, so it's only fair I post the trailer anyway.<br><br>
-            For those of us keen to play Fallout 4, November feels so very far away. Modders, however, simply couldn't wait that long to spice up New Vegas with a little flavor from Fallout 4. <br><br>
-            The Fallout 4 Garage Home mod might help tide you over during the long months ahead. It adds a replica of the workshop we saw in the Fallout 4 trailer, complete with power armor, two new weapons, a workbench, a bed, and a Nuka-Cola machine outside the front door. You can find it on the map close to Wolfhorn Ranch, east of Nipton. The key to the front gate is under the wheel well of the ruined car parked next to the building.
-            There's another little treat for you: a dog named Pal will welcome your arrival, and you can make him a companion if you wish. You also may want to dress in a Vault 111 jumpsuit, just to keep the mood going.
+            {!! $artikel2->isi !!}
             </p>
         </div>
 
         <div class="tags">
-        <h3>Tags : </h3> <p>#RPG #ACTION #ADVENTURE #17</p>
+        <h3>Tags : </h3> <p>{{$artikel2->tag}}</p>
         </div>
 
         <div class="col-sm-12 col-xs-12">

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Slider;
+use Carbon\Carbon;
 
 
 class AdminController extends Controller
@@ -40,9 +41,11 @@ class AdminController extends Controller
         $game->isi=$request->input('isi');
         $game->kategori=$request->input('kategori');
         $game->pembuat= 'Rizky Bayu';
+        $game->tag = $request->input('tag');
+        $game->tgl_buat= Carbon::now();
         $game->save();
 
-        return redirect('/lihatartikel');
+        return redirect('/tambahartikel');
 
     }
 

@@ -28,9 +28,11 @@ class GameController extends Controller
      *
      * @return Response
      */
-    public function lihatArtikel()
+    public function lihatArtikel($id)
     {
-        return view('artikel');
+        $artikel2 = Game::FindOrFail($id);
+
+        return view('artikel',compact('artikel2'));
     }
     public function lihat()
     {

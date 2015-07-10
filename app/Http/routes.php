@@ -21,7 +21,7 @@
 
 //user interface
 Route::get('/','GameController@index');
-Route::get('/artikel','GameController@lihatArtikel');
+Route::get('/artikel/{id}','GameController@lihatArtikel');
 Route::get('/lihat','GameController@lihat');
 
 //admin

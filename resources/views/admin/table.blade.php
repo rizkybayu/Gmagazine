@@ -25,10 +25,10 @@
                                     <thead>
                                         <tr>
                                             <th width="2.5%">No</th>
-                                            <th width="15%">Judul</th>
+                                            <th width="20%">Judul</th>
                                             <th width="25%">Lokasi Cover</th>
-                                            <th width="25%">Isi</th>
-                                            <th width="20%">Kategori</th>
+                                            <th width="15%"><center>Tanggal Buat</center></th>
+                                            <th width="15%">Kategori</th>
                                             <th width="7.5%">Aksi</th>
                                         </tr>
                                     </thead>
@@ -39,7 +39,7 @@
                                             <td><?php echo $a; ?></td>
                                             <td>{{$game->Judul}}</td>
                                             <td>{{$game->foto}}</td>
-                                            <td><div style="height:40px; overflow:hidden">{{$game->isi}}</div></td>
+                                            <td><!-- <div style="height:40px; overflow:hidden"> --><center>{{$game->tgl_buat}}</center></div></td>
                                             <td class="center">{{$game->kategori}}</td>
                                             <td class="center"><a href="{{$game->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{$game->id}}"><i class="fa fa-trash"></i></a> </td>
                                         </tr>
