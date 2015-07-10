@@ -12,6 +12,8 @@
     <link href="{{asset('admin/js/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
     <link href="{{asset('admin/css/custom.css')}}" rel="stylesheet" />
+        <!-- FAV ICON -->
+    <link rel="SHORTCUT ICON" href="{{asset('images/fav.png')}}" type="image/x-icon"/>
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
