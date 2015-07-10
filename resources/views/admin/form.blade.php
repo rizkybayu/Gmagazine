@@ -22,7 +22,11 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    
+                                <!-- NOTIFIKASI -->
+                                    @if(Session::has('flash_message'))
+                                        <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+                                    @endif
+                                <!-- BATAS NOTIFIKASI -->
                                     {!! Form::open(array('url' => '/store', 'method' => 'POST')) !!}
                                     <!-- <form role="form"> -->
 

@@ -54,8 +54,8 @@ class AdminController extends Controller
         $game->tgl_buat= Carbon::now();
         $game->save();
 
-        // return redirect('/tambahartikel');
-        return redirect('/tambahartikel')->with('status', 'Berhasil menambah artikel!');
+        \Session::flash('flash_message','Berhasil Membuat Artikel');
+        return redirect('/tambahartikel');
     }
 //BATAS MEMBUAT ARTIKEL
 
@@ -84,9 +84,5 @@ class AdminController extends Controller
         return redirect('/tambahadmin');
     }
 // BATAS UNTUK MEMBUAT ADMIN
-
-    public function hmm(){
-        return Redirect::to('/')->with('success', "Hooray, things are awesome!");
-    }
 
 }
