@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
+use App\Database\Model\Admin;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
 
@@ -20,7 +21,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $ambilArtikel = Game::get();
+        $ambilAdmin = Admin::get();
+        return view('admin.home',compact('ambilArtikel','ambilAdmin'));
     }
 
     public function login()
