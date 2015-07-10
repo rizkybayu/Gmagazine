@@ -26,9 +26,10 @@
                                     {!! Form::open(array('url' => '/store', 'method' => 'POST')) !!}
                                     <!-- <form role="form"> -->
 
-                                        <div class="form-group">
+                                        <div class="form-group @if ($errors->has('judul')) has-error @endif">
                                             {!! Form::label('Judul :') !!}
                                             {!! Form::text('judul',null,['class'=>'form-control','placeholder'=>'Masukan Judul']) !!}
+                                            @if ($errors->has('judul')) <p class="help-block">{{ $errors->first('judul') }}</p> @endif
                                             <!-- <label>Masukan Judul</label>
                                             <input class="form-control"> -->
                                             <!-- <p class="help-block"></p> -->
@@ -41,17 +42,18 @@
                                             <input type="file" --> 
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group @if ($errors->has('isi')) has-error @endif">
                                             {!! Form::label('Isi Artikel :') !!}
                                             {!! Form::textarea('isi',null, ['class'=>'form-control','row'=>'3','placeholder'=>'Masukan Isi Artikel']) !!}
-
+                                            @if ($errors->has('isi')) <p class="help-block">{{ $errors->first('isi') }}</p> @endif
                                             <!-- <label>Isi Artikel</label>
                                             <textarea class="form-control" rows="3"></textarea> -->
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group @if ($errors->has('tag')) has-error @endif">
                                             {!! Form::label('Tags :') !!}
                                             {!! Form::text('tag',null,['class'=>'form-control','placeholder'=>'Ex : #RPG #ADVENTURE']) !!}
+                                            @if ($errors->has('tag')) <p class="help-block">{{ $errors->first('tag') }}</p> @endif
                                         </div>
 
                                         <div class="col-sm-3">

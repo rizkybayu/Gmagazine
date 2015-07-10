@@ -10,6 +10,8 @@ use App\Database\Model\Game;
 use App\Database\Model\Admin;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
+use App\Http\Requests\ArtikelRequest;
+use Illuminate\Support\Facades\Redirect;
 
 
 class AdminController extends Controller
@@ -39,7 +41,7 @@ class AdminController extends Controller
     {
         return view('admin.form');
     }
-    public function store(Request $request) //menyimpan
+    public function store(ArtikelRequest $request) //menyimpan
     {
         $game = new Game();
         $game->judul=$request->input('judul');
@@ -52,7 +54,8 @@ class AdminController extends Controller
         $game->tgl_buat= Carbon::now();
         $game->save();
 
-        return redirect('/tambahartikel');
+        // return redirect('/tambahartikel');
+        return redirect('/tambahartikel')->with('status', 'Berhasil menambah artikel!');
     }
 //BATAS MEMBUAT ARTIKEL
 
@@ -81,5 +84,9 @@ class AdminController extends Controller
         return redirect('/tambahadmin');
     }
 // BATAS UNTUK MEMBUAT ADMIN
+
+    public function hmm(){
+        return Redirect::to('/')->with('success', "Hooray, things are awesome!");
+    }
 
 }

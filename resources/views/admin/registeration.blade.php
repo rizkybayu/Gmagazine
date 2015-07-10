@@ -66,6 +66,7 @@
                                     <hr />
                                     <a href="{{url('/dash')}}" >Kembali</a>
                                     {!! Form::close() !!}
+                                    
                             </div>
                            
                         </div>

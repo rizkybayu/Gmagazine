@@ -25,11 +25,11 @@
                                     <thead>
                                         <tr>
                                             <th width="2.5%">No</th>
-                                            <th width="20%">Judul</th>
-                                            <th width="25%">Lokasi Cover</th>
+                                            <th width="20%"><center>Judul</center></th>
+                                            <th width="25%"><center>Lokasi Cover</center></th>
                                             <th width="15%"><center>Tanggal Buat</center></th>
-                                            <th width="15%">Kategori</th>
-                                            <th width="7.5%">Aksi</th>
+                                            <th width="15%"><center>Kategori</center></th>
+                                            <th width="7.5%"><center>Aksi</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,7 +41,7 @@
                                             <td>{{$game->foto}}</td>
                                             <td><!-- <div style="height:40px; overflow:hidden"> --><center>{{$game->tgl_buat}}</center></div></td>
                                             <td class="center">{{$game->kategori}}</td>
-                                            <td class="center"><a href="{{$game->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{$game->id}}"><i class="fa fa-trash"></i></a> </td>
+                                            <td class="center"><center><a href="{{$game->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{$game->id}}"><i class="fa fa-trash"></i></a></center></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach

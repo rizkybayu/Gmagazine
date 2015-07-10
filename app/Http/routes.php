@@ -19,6 +19,9 @@
 //   return view('artikel');
 //});
 
+
+//testing 
+Route::get('/hmm','AdminController@hmm');
 //user interface
 Route::get('/','GameController@index');
 Route::get('/artikel/{id}','GameController@lihatArtikel');
