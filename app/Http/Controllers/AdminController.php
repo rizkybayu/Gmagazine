@@ -26,11 +26,15 @@ class AdminController extends Controller
         return view('admin.home',compact('ambilArtikel','ambilAdmin'));
     }
 
+//UNTUK ADMIN LOGIN
     public function login()
     {
         return view('admin.login');
     }
+//BATAS UNTUK ADMIN LOGIN
 
+
+//UNTUK MEMBUAT ARTIKEL
     public function tambah()
     {
         return view('admin.form');
@@ -49,18 +53,33 @@ class AdminController extends Controller
         $game->save();
 
         return redirect('/tambahartikel');
-
     }
+//BATAS MEMBUAT ARTIKEL
 
+//MELIHAT ARTIKEL APA SAJA YANG SUDAH DI BUAT DAN BISA MENGEDITNYA
     public function lihat()
     {
         $list_game = Game::paginate(10);
         return view('admin.table',compact('list_game'));
     }
+//BATAS MELIHAT DAN MENGEDIT DAN MENGHAPUS 
 
+//UNTUK MEMBUAT ADMIN 
     public function tambahadmin(){
         return view('admin.registeration');
     }
+    public function tambah_admin(Request $request2)
+    {
+        $admin = new Admin();
+        $admin->nama_admin=$request2->input('nama');
+        $admin->email_admin=$request2->input('email');
+        $admin->username=$request2->input('user');
+        $admin->password=$request2->input('pass');
+        $admin->tgl_jadi= Carbon::now();
+        $admin->save();
 
+        return redirect('/tambahadmin');
+    }
+// BATAS UNTUK MEMBUAT ADMIN
 
 }

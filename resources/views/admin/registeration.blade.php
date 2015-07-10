@@ -33,33 +33,39 @@
                         <strong> GMagazine </strong>  
                             </div>
                             <div class="panel-body">
-                                <form role="form">
+                                {!! Form::open(array('url' => '/tambah_admin', 'method' => 'POST')) !!}
 <br/>
                                         <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                                            <input type="text" class="form-control" placeholder="Nama" />
+                                            {!! Form::text('nama',null,['class'=>'form-control','placeholder'=>'Nama Lengkap']) !!}
+                                            <!-- <input type="text" class="form-control" placeholder="Nama" /> -->
                                         </div>
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" placeholder="Username" />
+                                            {!! Form::text('user',null,['class'=>'form-control','placeholder'=>'Username']) !!}
+                                            <!-- <input type="text" class="form-control" placeholder="Username" /> -->
                                         </div>
                                          <div class="form-group input-group">
                                             <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" placeholder="Email" />
+                                            {!! Form::text('email',null,['class'=>'form-control','placeholder'=>'Email']) !!}
+                                            <!-- <input type="text" class="form-control" placeholder="Email" /> -->
                                         </div>
                                       <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control" placeholder="Password" />
+                                            <!-- {!! Form::password('pass',null,['class'=>'form-control','placeholder'=>'Password']) !!} -->
+                                            {!! Form::password('pass', array('placeholder' => 'Password','class' => 'form-control')); !!}
+                                            <!-- <input type="password" class="form-control" placeholder="Password" /> -->
                                         </div>
-                                     <div class="form-group input-group">
+                                     <!-- <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
                                             <input type="password" class="form-control" placeholder="Ketik Ulang Password" />
-                                        </div>
+                                        </div> -->
                                      
-                                     <a href="index.html" class="btn btn-success ">Tambah Admin</a>
+                                     {!!Form::submit('Tambah Admin',['class' => 'btn btn-success','name'=>'simpan']) !!}
+                                     <!-- <a href="index.html" class="btn btn-success ">Tambah Admin</a> -->
                                     <hr />
                                     <a href="{{url('/dash')}}" >Kembali</a>
-                                    </form>
+                                    {!! Form::close() !!}
                             </div>
                            
                         </div>
