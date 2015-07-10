@@ -20,6 +20,11 @@
                              GMagzine
                         </div>
                         <div class="panel-body">
+                        <!-- NOTIFIKASI -->
+                                    @if(Session::has('flash_message'))
+                                        <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+                                    @endif
+                        <!-- BATAS NOTIFIKASI -->
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
@@ -41,7 +46,7 @@
                                             <td>{{$game->foto}}</td>
                                             <td><!-- <div style="height:40px; overflow:hidden"> --><center>{{$game->tgl_buat}}</center></div></td>
                                             <td class="center">{{$game->kategori}}</td>
-                                            <td class="center"><center><a href="{{$game->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{$game->id}}"><i class="fa fa-trash"></i></a></center></td>
+                                            <td class="center"><center><a href="{{$game->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{ url('/hapus',$game->id) }}"><i class="fa fa-trash"></i></a></center></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach

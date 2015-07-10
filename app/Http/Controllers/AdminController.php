@@ -37,7 +37,7 @@ class AdminController extends Controller
 //BATAS UNTUK ADMIN LOGIN
 
 
-//UNTUK MEMBUAT ARTIKEL
+//UNTUK ARTIKEL
     public function tambah()
     {
         return view('admin.form');
@@ -57,6 +57,13 @@ class AdminController extends Controller
 
         \Session::flash('flash_message','Berhasil Membuat Artikel');
         return redirect('/tambahartikel');
+    }
+
+    public function hapus($id){
+        Game::find($id)->delete();
+
+        \Session::flash('flash_message','Berhasil menghapus artikel !');
+        return redirect('/lihatartikel');
     }
 //BATAS MEMBUAT ARTIKEL
 
