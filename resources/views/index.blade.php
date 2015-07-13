@@ -74,13 +74,15 @@
         <div class="isi">
             <div class="col-lg-6">
             <div class="tambah">
+            <div class="row">
               <div class="kotak2">
-                  <img src="{{$val->foto}}" class="img-responsive">
+                  <img src="{{ asset('images/news')}}/{{'cover'.$val->id}}.jpg" class="img-responsive">
                   <div class="ket">
                   <div class="tag">{{$val->kategori}}</div>
                         <p><a href="{{ url('artikel',$val->id) }}">{{ $val->Judul }}</a></p>
                   </div>
               </div>
+            </div>
             </div>
             </div>
         </div>

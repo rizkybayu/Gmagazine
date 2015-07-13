@@ -47,6 +47,10 @@ ISI
 	background-color: red;
 	float: left;
 }
+.kotak2 img{
+	width: 540px !important;
+	height: 300px !important;
+}
 
 .kotak3{
 	margin-bottom: 10px;

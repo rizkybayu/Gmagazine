@@ -27,7 +27,7 @@
                                         <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
                                     @endif
                                 <!-- BATAS NOTIFIKASI -->
-                                    {!! Form::open(array('url' => '/store', 'method' => 'POST')) !!}
+                                    {!! Form::open(array('url' => '/store', 'method' => 'POST' ,'files' => true)) !!}
                                     <!-- <form role="form"> -->
 
                                         <div class="form-group @if ($errors->has('judul')) has-error @endif">
@@ -39,9 +39,10 @@
                                             <!-- <p class="help-block"></p> -->
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group @if ($errors->has('image')) has-error @endif">
                                             {!! Form::label('Masukan Foto Artikel :') !!}
-                                            {!! Form::file('foto',['class'=>null]) !!}
+                                            {!! Form::file('image',['class'=>null]) !!}
+                                             @if ($errors->has('image')) <p class="help-block">{{ $errors->first('image') }}</p> @endif
                                             <!-- <label>Masukan Gambar Cover</label>
                                             <input type="file" --> 
                                         </div>

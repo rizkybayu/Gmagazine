@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Request;
 
-
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Admin;
@@ -42,18 +41,26 @@ class AdminController extends Controller
     {
         return view('admin.form');
     }
+
     public function store(ArtikelRequest $request) //menyimpan
     {
         $game = new Game();
         $game->judul=$request->input('judul');
         // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
-        $game->foto='images/news/ps4.png';
+        // $game->foto='images/news/ps4.png'; default ini
         $game->isi=$request->input('isi');
         $game->kategori=$request->input('kategori');
         $game->pembuat= 'Rizky Bayu';
         $game->tag = $request->input('tag');
         $game->tgl_buat= Carbon::now();
         $game->save();
+
+        $imageName = "cover".$game->id . '.' . 
+        $request->file('image')->getClientOriginalExtension();
+
+        $request->file('image')->move(
+            base_path() . '/public/images/news/', $imageName
+        );
 
         \Session::flash('flash_message','Berhasil Membuat Artikel');
         return redirect('/tambahartikel');
@@ -78,7 +85,6 @@ class AdminController extends Controller
         $game->tag = $request->input('tag');
         $game->tgl_buat= Carbon::now();
         $game->save();
-
 
         \Session::flash('flash_message','Berhasil mengubah artikel !');
         return redirect('/lihatartikel');

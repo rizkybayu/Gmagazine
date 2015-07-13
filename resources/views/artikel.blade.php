@@ -109,7 +109,7 @@
           </div><!-- judul -->
 
         <div class="isi-gambar">
-          <img src="{{asset('images/games/bf.jpg')}}" class="img-responsive">
+          <img src="{{ asset('images/news')}}/{{'cover'.$artikel2->id}}.jpg" class="img-responsive">
         </div>
 
         <div class="isi-artikel">
