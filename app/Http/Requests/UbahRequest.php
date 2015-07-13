@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ArtikelRequest extends Request
+class UbahRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,6 @@ class ArtikelRequest extends Request
             'isi' => 'required',
             'tag' => 'required',
             'kategori' => 'required',
-            'image' => 'required|mimes:jpg,jpeg'
         ];
     }
 }

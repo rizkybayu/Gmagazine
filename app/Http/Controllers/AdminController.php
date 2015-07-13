@@ -10,6 +10,7 @@ use App\Database\Model\Admin;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
 use App\Http\Requests\ArtikelRequest;
+use App\Http\Requests\UbahRequest;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
 
@@ -73,19 +74,18 @@ class AdminController extends Controller
         return redirect('/lihatartikel');
     }
 
-    public function ubah($id,ArtikelRequest $request)
+    public function ubah($id,UbahRequest $request)
     {
-        $game = Game::find($id);
+         $game = Game::find($id);
         $game->judul=$request->input('judul');
         // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
-        $game->foto='images/news/ps4.png';
+        // $game->foto='images/news/ps4.png';
         $game->isi=$request->input('isi');
         $game->kategori=$request->input('kategori');
         $game->pembuat= 'Rizky Bayu';
         $game->tag = $request->input('tag');
         $game->tgl_buat= Carbon::now();
         $game->save();
-
         \Session::flash('flash_message','Berhasil mengubah artikel !');
         return redirect('/lihatartikel');
     }

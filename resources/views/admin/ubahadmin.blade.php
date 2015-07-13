@@ -32,18 +32,11 @@
 
                                         <div class="form-group">
                                             {!! Form::label('Judul :') !!}
-                                            {!! Form::text('judul',$edit->Judul,['class'=>'form-control','placeholder'=>'Masukan Judul']) !!}
+                                            {!! Form::text('judul',$edit->Judul,['class'=>'form-control','placeholder'=>'Masukan Judul','maxlength'=>'40']) !!}
                                             
                                             <!-- <label>Masukan Judul</label>
                                             <input class="form-control"> -->
                                             <!-- <p class="help-block"></p> -->
-                                        </div>
-
-                                        <div class="form-group">
-                                            {!! Form::label('Masukan Foto Artikel :') !!}
-                                            {!! Form::file('foto',['class'=>null]) !!}
-                                            <!-- <label>Masukan Gambar Cover</label>
-                                            <input type="file" --> 
                                         </div>
 
                                         <div class="form-group">

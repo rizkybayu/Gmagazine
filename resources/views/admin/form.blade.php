@@ -32,7 +32,7 @@
 
                                         <div class="form-group @if ($errors->has('judul')) has-error @endif">
                                             {!! Form::label('Judul :') !!}
-                                            {!! Form::text('judul',null,['class'=>'form-control','placeholder'=>'Masukan Judul']) !!}
+                                            {!! Form::text('judul',null,['class'=>'form-control','placeholder'=>'Masukan Judul','maxlength'=>'40']) !!}
                                             @if ($errors->has('judul')) <p class="help-block">{{ $errors->first('judul') }}</p> @endif
                                             <!-- <label>Masukan Judul</label>
                                             <input class="form-control"> -->
@@ -40,7 +40,7 @@
                                         </div>
 
                                         <div class="form-group @if ($errors->has('image')) has-error @endif">
-                                            {!! Form::label('Masukan Foto Artikel :') !!}
+                                            {!! Form::label('Masukan Foto Artikel :') !!}<i>*hanya .jpg</i>
                                             {!! Form::file('image',['class'=>null]) !!}
                                              @if ($errors->has('image')) <p class="help-block">{{ $errors->first('image') }}</p> @endif
                                             <!-- <label>Masukan Gambar Cover</label>
