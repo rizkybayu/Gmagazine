@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Tambah Artikel</h2>   
-                        <h5>Welcome Rizky Bayu</h5>
+                        <h5>Selamat Datang {{ Auth::user()->name }}</h5>
                        
                     </div>
                 </div>

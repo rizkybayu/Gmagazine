@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Admin Dashboard</h2>   
-                        <h5>Selamat Datang Admin!</h5>
+                        <h5>Selamat Datang {{ Auth::user()->name }}</h5>
                     </div>
                 </div>              
                  <!-- /. ROW  -->

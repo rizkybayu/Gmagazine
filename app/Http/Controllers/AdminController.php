@@ -13,6 +13,8 @@ use App\Http\Requests\ArtikelRequest;
 use App\Http\Requests\UbahRequest;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
+use App\User;
 
 
 class AdminController extends Controller
@@ -25,7 +27,7 @@ class AdminController extends Controller
     public function index()
     {
         $ambilArtikel = Game::get();
-        $ambilAdmin = Admin::get();
+        $ambilAdmin = Admin ::get();
         return view('admin.home',compact('ambilArtikel','ambilAdmin'));
     }
 
@@ -113,11 +115,9 @@ class AdminController extends Controller
     public function tambah_admin(AdminRequest $request2)
     {
         $admin = new Admin();
-        $admin->nama_admin=$request2->input('nama');
-        $admin->email_admin=$request2->input('email');
-        $admin->username=$request2->input('user');
-        $admin->password=$request2->input('pass');
-        $admin->tgl_jadi= Carbon::now();
+        $admin->name=$request2->input('name');
+        $admin->email=$request2->input('email');
+        $admin->password=$request2->input('password');
         $admin->save();
 
         \Session::flash('flash_message','Berhasil Menambahkan Admin !');
@@ -125,4 +125,8 @@ class AdminController extends Controller
     }
 // BATAS UNTUK MEMBUAT ADMIN
 
+    public function hmm()
+    {
+        user::create(['email' => 'restu@javan.co.id', 'password' => Hash::make('restu'), 'name' => 'restu']);
+    }
 }

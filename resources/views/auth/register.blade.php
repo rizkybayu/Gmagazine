@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -38,12 +38,12 @@
                                         <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
                                     @endif
                                 <!-- BATAS NOTIFIKASI -->
-                                {!! Form::open(array('url' => '/tambah_admin', 'method' => 'POST')) !!}
+                                {!! Form::open(array('url' => 'auth/register', 'method' => 'POST')) !!}
 <br/>
-                                        <div class="form-group input-group @if ($errors->has('nama')) has-error @endif">
+                                        <div class="form-group input-group @if ($errors->has('name')) has-error @endif">
                                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                                            {!! Form::text('nama',null,['class'=>'form-control','placeholder'=>'Nama Lengkap']) !!}
-                                            @if ($errors->has('name')) <p class="help-block">{{ $errors->first('nama') }}</p> @endif
+                                            {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'Nama Lengkap']) !!}
+                                            @if ($errors->has('name')) <p class="help-block">{{ $errors->first('name') }}</p> @endif
                                             <!-- <input type="text" class="form-control" placeholder="Nama" /> -->
                                         </div>
                                          <div class="form-group input-group @if ($errors->has('email')) has-error @endif">
@@ -67,7 +67,7 @@
                                      {!!Form::submit('Tambah Admin',['class' => 'btn btn-success','name'=>'simpan']) !!}
                                      <!-- <a href="index.html" class="btn btn-success ">Tambah Admin</a> -->
                                     <hr />
-                                    <a href="{{url('/gm-admin/index')}}" >Kembali</a>
+                                    <a href="{{url('/')}}" >Kembali</a>
                                     {!! Form::close() !!}
                                     
                             </div>

@@ -70,6 +70,7 @@
     <div class="container">
         <div class="row">
     <div class="col-lg-12">
+
         @foreach ($data as $val )
         <div class="isi">
             <div class="col-lg-6">

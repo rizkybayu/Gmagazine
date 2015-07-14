@@ -24,10 +24,9 @@ class AdminRequest extends Request
     public function rules()
     {
         return [
-            'nama' => 'required|min:3',
-            'user' => 'required',
+            'name' => 'required|min:3',
             'email'=>'required|email',
-            'pass' => 'required|min:6'
+            'password' => 'required|min:6'
         ];
     }
 }

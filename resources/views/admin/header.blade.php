@@ -32,7 +32,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;">&nbsp; <a href="{{ url('/auth/logout') }}" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -44,7 +44,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
                 
                     
                     <li>
-                        <a  href="{{url('/dash')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a  href="{{url('/gm-admin/index')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                       <li>
                         <a  href="{{url('/lihatartikel')}}"><i class="fa fa-table fa-3x"></i>Daftar Artikel</a>
@@ -52,9 +52,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
                     <li>
                         <a class=""  href="{{url('/tambahartikel')}}"><i class="fa fa-edit fa-3x"></i>Tambah Artikel</a>
                     </li>                 
-                     <li>
-                        <a   href="{{url('/tambahadmin')}}"><i class="fa fa-laptop fa-3x"></i>Tambah Admin</a>
-                    </li>   
+                     <!-- <li>
+                        <a   href="{{url('auth/register')}}"><i class="fa fa-laptop fa-3x"></i>Tambah Admin</a>
+                    </li>    -->
                 </ul>
                
             </div>
