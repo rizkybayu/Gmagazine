@@ -42,10 +42,11 @@
 
             <div class="col-sm-6 col-md-3">
               <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Cari Disini </h4>
-              <form action="http://danvswild.com/brew/" method="get" class="form-inline">
+              <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
                 <fieldset>
                     <div class="input-group">
-                      <input type="text" name="s" id="search" placeholder="Cari" value="" class="form-control" />
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="text" name="cari1" id="search" placeholder="Cari" value="" class="form-control" />
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-danger">Cari</button>
                       </span>
