@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </form>
-        </div>          
+        </div>       
     </div>
 </nav>
 
@@ -70,9 +70,11 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
+        <h3>Hasil Dari Cari "{{ $searchterm }}"</h3>
     <div class="col-lg-12">
 
-        @foreach ($data as $val )
+        @if(isset($results))
+       @foreach($results as $val)
         <div class="isi">
             <div class="col-lg-6">
             <div class="tambah">
@@ -89,13 +91,19 @@
             </div>
         </div>
         @endforeach
+        @else
+           <div class="form-group">
+               <h1>Tidak Ditemukan</h1>
+           </div>
+       @endif
+        
 
         
 
         <center>
         <nav style="clear:both">
         <div class="pagination">
-            {!!$data->render()!!}
+            
         </div>
         </nav>
         </center>

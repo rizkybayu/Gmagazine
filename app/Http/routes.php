@@ -21,11 +21,14 @@
 
 
 //testing 
-Route::get('/hmm','AdminController@hmm');
+Route::get('/cek','GameController@cek');
 //user interface
 Route::get('/','GameController@index');
 Route::get('/artikel/{id}','GameController@lihatArtikel');
 Route::get('/lihat','GameController@lihat');
+
+//cari
+Route::post('/cari','GameController@cari');
 
 // //adminlogin 
 /*Route::get('auth/login', 'AuthController@getLogin');

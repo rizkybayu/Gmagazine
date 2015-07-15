@@ -10,10 +10,10 @@
             <div class="col-sm-6 col-md-3">
                 <div id="meta-3" class="widget widgetFooter widget_meta"><h4 class="widgettitle">Find Me On</h4>         
                     <ul>
-                        <li><a href="#">Log in</a></li>
-                        <li><a href="#">Entries RSS</a></li>
-                        <li><a href="#">Comments></a></li>
-                        <li><a href="#">WordPress.org</a></li>                        
+                        <li><a href="www.instagram.com">Instagram</a></li>
+                        <li><a href="www.twitter.com">Twitter</a></li>
+                        <li><a href="www.facebook.com">Facebook</a></li>
+                        <li><a href="www.github.com">Github</a></li>                        
                     </ul>
                 </div>            
             </div> <!-- end widget1 -->
@@ -23,34 +23,35 @@
                     <h4 class="widgettitle">About me</h4>        
                     <ul>
                         <li>Student on RPL SMKN 2 Cimahi</li>
-                        <li><a href="#">Blockquote Post</a></li>
-                        <li><a href="#">UL and OL Post</a></li>
+                        <li>Designer website</li>
+                        <li>Learning by doing</a></li>
                     </ul>
                 </div>            
             </div> <!-- end widget1 -->
 
             <div class="col-sm-6 col-md-3">
-              <div id="meta-4" class="widget widgetFooter widget_meta"><h4 class="widgettitle">Footer Widget 3</h4>         
+              <div id="meta-4" class="widget widgetFooter widget_meta"><h4 class="widgettitle">Other</h4>         
                 <ul>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+                    <li><a href="www.twitter.com" target="_blank">Youtube</a></li>
+                    <li><a href="www.twitter.com">Entries <abbr title="Really Simple Syndication">Twitter</abbr></a></li>
                     <li><a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="#">WordPress.org</a></li>                        
+                    <li><a href="#">laravel.com</a></li>                        
                 </ul>
             </div>            
             </div> <!-- end widget1 -->
 
             <div class="col-sm-6 col-md-3">
-              <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Footer Widget 4</h4><form action="http://danvswild.com/brew/" method="get" class="form-inline">
+              <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Cari Disini </h4>
+              <form action="http://danvswild.com/brew/" method="get" class="form-inline">
                 <fieldset>
                     <div class="input-group">
-                      <input type="text" name="s" id="search" placeholder="Search" value="" class="form-control" />
+                      <input type="text" name="s" id="search" placeholder="Cari" value="" class="form-control" />
                       <span class="input-group-btn">
-                        <button type="submit" class="btn btn-danger">Search</button>
+                        <button type="submit" class="btn btn-danger">Cari</button>
                       </span>
                     </div>
                 </fieldset>
-            </form>
+              </form>
 
 </div>            </div> <!-- end widget1 -->
 

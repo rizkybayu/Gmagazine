@@ -66,9 +66,10 @@
             </li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
-            <form class="navbar-form" role="search">
+            <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="text" class="form-control" placeholder="Search" name="cari1">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -136,7 +137,7 @@
     <!--sidebar-->
         <div class="col-sm-3 col-xs-12">
         <div class="kanan">ADVERTISMENT</div><br>
-        <img src="{{asset('images/ads/ad.jpg')}}" class="img-responsive"/>
+        <img src="{{asset('/images/ads/ad.jpg')}}" class="img-responsive"/>
         </div>
     </div>
     </div>
@@ -154,21 +155,21 @@
             <div class="col-sm-6 col-md-3">
                 <div id="meta-3" class="widget widgetFooter widget_meta"><h4 class="widgettitle">Find Me On</h4>         
                     <ul>
-                        <li><a href="#">Log in</a></li>
-                        <li><a href="#">Entries RSS</a></li>
-                        <li><a href="#">Comments></a></li>
-                        <li><a href="#">WordPress.org</a></li>                        
+                        <li><a href="www.instagram.com">Instagram</a></li>
+                        <li><a href="www.twitter.com">Twitter</a></li>
+                        <li><a href="www.facebook.com">Facebook</a></li>
+                        <li><a href="www.github.com">Github</a></li>                        
                     </ul>
                 </div>            
             </div> <!-- end widget1 -->
 
             <div class="col-sm-6 col-md-3">
                 <div id="recent-posts-3" class="widget widgetFooter widget_recent_entries">     
-                    <h4 class="widgettitle">Footer Widget 2</h4>        
+                    <h4 class="widgettitle">About me</h4>        
                     <ul>
-                        <li><a href="#">Links Post</a></li>
-                        <li><a href="#">Blockquote Post</a></li>
-                        <li><a href="#">UL and OL Post</a></li>
+                        <li>Student on RPL SMKN 2 Cimahi</li>
+                        <li>Designer website</li>
+                        <li>Learning by doing</a></li>
                     </ul>
                 </div>            
             </div> <!-- end widget1 -->
@@ -176,22 +177,22 @@
             <div class="col-sm-6 col-md-3">
               <div id="meta-4" class="widget widgetFooter widget_meta"><h4 class="widgettitle">Footer Widget 3</h4>         
                 <ul>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+                    <li><a href="www.twitter.com" target="_blank">Youtube</a></li>
+                    <li><a href="www.twitter.com">Entries <abbr title="Really Simple Syndication">Twitter</abbr></a></li>
                     <li><a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="#">WordPress.org</a></li>                        
+                    <li><a href="#">laravel.com</a></li>                        
                 </ul>
             </div>            
             </div> <!-- end widget1 -->
 
             <div class="col-sm-6 col-md-3">
-              <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Footer Widget 4</h4>
+              <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Cari Disini</h4>
               <form action="http://danvswild.com/brew/" method="get" class="form-inline">
                 <fieldset>
                     <div class="input-group">
-                      <input type="text" name="s" id="search" placeholder="Search" value="" class="form-control" />
+                      <input type="text" name="s" id="search" placeholder="Cari" value="" class="form-control" />
                       <span class="input-group-btn">
-                        <button type="submit" class="btn btn-danger">Search</button>
+                        <button type="submit" class="btn btn-danger">Cari</button>
                       </span>
                     </div>
                 </fieldset>

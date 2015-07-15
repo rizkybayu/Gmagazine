@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Slider;
+use DB;
 
 class GameController extends Controller
 {
@@ -38,9 +39,29 @@ class GameController extends Controller
     {
         return view('artikel');
     }
-    public function create()
+
+    public function cari(Request $request){
+        $data2 = Slider::get();
+       $searchterm = $request->input('cari1');
+       if ($searchterm){
+
+
+           $products = DB::table('tbl_game');
+           $results = $products->where('id', 'LIKE', '%'. $searchterm .'%')
+               ->orWhere('Judul', 'LIKE', '%'. $searchterm .'%')
+               ->get();
+           if($searchterm == null){
+               return ('404 Not Found');
+           }
+           return view('cari', compact('results', 'searchterm','data2'));
+
+       }
+   }
+
+    public function cek()
     {
-        //
+        $data2 = Slider::get();
+        return view('cari',compact('data2'));
     }
 
     /**
