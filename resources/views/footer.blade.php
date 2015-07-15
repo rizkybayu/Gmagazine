@@ -20,9 +20,9 @@
 
             <div class="col-sm-6 col-md-3">
                 <div id="recent-posts-3" class="widget widgetFooter widget_recent_entries">     
-                    <h4 class="widgettitle">Footer Widget 2</h4>        
+                    <h4 class="widgettitle">About me</h4>        
                     <ul>
-                        <li><a href="#">Links Post</a></li>
+                        <li>Student on RPL SMKN 2 Cimahi</li>
                         <li><a href="#">Blockquote Post</a></li>
                         <li><a href="#">UL and OL Post</a></li>
                     </ul>

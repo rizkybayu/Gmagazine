@@ -15,6 +15,8 @@
     <link href="{{asset('admin/css/custom.css')}}" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+           <!-- FAV ICON -->
+    <link rel="SHORTCUT ICON" href="{{asset('images/fav.png')}}" type="image/x-icon"/>
 </head>
 <body>
 <!-- end header -->
@@ -50,11 +52,11 @@
 
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" name="email" placeholder="Your Username " />
+                                            <input type="text" class="form-control" name="email" placeholder="Email " />
                                         </div>
                                                                               <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control" name="password"  placeholder="Your Password" />
+                                            <input type="password" class="form-control" name="password"  placeholder="Password" />
                                         </div>
                                     <div class="form-group">
                                             <label class="checkbox-inline">
@@ -65,7 +67,7 @@
                                             </span>
                                         </div>
                                      <input type="submit" value="Login Now" class="btn btn-primary">
-<!--                                      <a href="{{url('/dash')}}" class="btn btn-primary ">Login Now</a><!-- nanti ganti biar dinamis --> -->
+<!--                                      <a href="{{url('/dash')}}" class="btn btn-primary ">Login Now</a><!-- nanti ganti biar dinamis -->
                                     <hr />
                                     Not register ? <a href="registeration.html" >click here </a> 
                                     </form>

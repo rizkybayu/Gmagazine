@@ -44,12 +44,13 @@ ISI
 	margin-bottom: 30px;
 	width: auto !important; /*540px*/
 	height: auto !important; /*300px*/
-	background-color: red;
+	background-color: white;
 	float: left;
 }
 .kotak2 img{
 	width: 540px !important;
 	height: 300px !important;
+
 }
 
 .kotak3{
