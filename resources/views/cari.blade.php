@@ -73,7 +73,11 @@
         <h3>Hasil Dari Cari "{{ $searchterm }}"</h3>
     <div class="col-lg-12">
 
-        @if(isset($results))
+    <?php 
+    if (empty($results||$results=="")){
+        echo "<h2>Data Tidak Di Temukan</h2>";
+    }else{
+    ?>
        @foreach($results as $val)
         <div class="isi">
             <div class="col-lg-6">
@@ -91,11 +95,10 @@
             </div>
         </div>
         @endforeach
-        @else
-           <div class="form-group">
-               <h1>Tidak Ditemukan</h1>
-           </div>
-       @endif
+        <?php
+        }   
+        ?>
+        
         
 
         
