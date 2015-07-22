@@ -49,7 +49,7 @@
 
                                         <div class="form-group @if ($errors->has('isi')) has-error @endif">
                                             {!! Form::label('Isi Artikel :') !!}
-                                            {!! Form::textarea('isi',null, ['class'=>'form-control','row'=>'3','placeholder'=>'Masukan Isi Artikel']) !!}
+                                            {!! Form::textarea('isi',null, ['class'=>'ckeditor','row'=>'3','placeholder'=>'Masukan Isi Artikel']) !!}
                                             @if ($errors->has('isi')) <p class="help-block">{{ $errors->first('isi') }}</p> @endif
                                             <!-- <label>Isi Artikel</label>
                                             <textarea class="form-control" rows="3"></textarea> -->

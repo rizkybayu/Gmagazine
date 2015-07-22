@@ -41,7 +41,7 @@
 
                                         <div class="form-group">
                                             {!! Form::label('Isi Artikel :') !!}
-                                            {!! Form::textarea('isi',$edit->isi, ['class'=>'form-control','row'=>'3','placeholder'=>'Masukan Isi Artikel']) !!}
+                                            {!! Form::textarea('isi',$edit->isi, ['class'=>'ckeditor','row'=>'3','placeholder'=>'Masukan Isi Artikel']) !!}
                                            
                                             <!-- <label>Isi Artikel</label>
                                             <textarea class="form-control" rows="3"></textarea> -->

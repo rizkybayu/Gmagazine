@@ -10,6 +10,9 @@
     <script src="{{asset('admin/js/morris/morris.js')}}"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="{{asset('admin/js/custom.js')}}"></script>
+    <!--ck editor -->
+    <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <script type="text/javascript" src="{{asset('ckeditor/style.js')}}"></script>
     
    
 </body>
