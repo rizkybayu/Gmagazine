@@ -30,7 +30,7 @@
             </li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
-            <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
+            <form action="{{ url('/cari') }}" method="POST" name="carii" class="navbar-form" role="search" onSubmit="return cekFile()">
                 <div class="input-group">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="text" class="form-control" placeholder="Search" name="cari1">

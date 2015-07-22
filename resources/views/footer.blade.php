@@ -42,7 +42,7 @@
 
             <div class="col-sm-6 col-md-3">
               <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Cari Disini </h4>
-              <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
+              <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search" name="carii2" onSubmit="return cekFile2()">
                 <fieldset>
                     <div class="input-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

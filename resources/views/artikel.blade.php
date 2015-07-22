@@ -66,7 +66,7 @@
             </li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
-            <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
+            <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search" name="carii" onSubmit="return cekFile()">
                 <div class="input-group">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="text" class="form-control" placeholder="Search" name="cari1">
@@ -187,7 +187,7 @@
 
             <div class="col-sm-6 col-md-3">
               <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">Cari Disini </h4>
-              <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
+              <form action="{{ url('/cari') }}" method="POST" name="carii2" class="navbar-form" role="search" onsubmit="return cekFile2()">
                 <fieldset>
                     <div class="input-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -227,6 +227,24 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('js/jquery.js')}}"></script>
 
+<script>
+function cekFile() {
+   var cek = document.forms['carii']['cari1'].value;
+     if(cek==null || cek=="")
+     {
+       alert("Data harus di isi !!!");
+       return false;
+     }
+}
+function cekFile2() {
+   var cek = document.forms['carii2']['cari1'].value;
+     if(cek==null || cek=="")
+     {
+       alert("Data harus di isi !!!");
+       return false;
+     }
+}
+</script>
 </body>
 
 </html>

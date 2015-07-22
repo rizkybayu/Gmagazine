@@ -33,6 +33,24 @@
 <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
 <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
 <!-- End WOWSlider.com HEAD section -->
+<script>
+function cekFile() {
+   var cek = document.forms['carii']['cari1'].value;
+     if(cek==null || cek=="")
+     {
+       alert("Data harus di isi !!!");
+       return false;
+     }
+}
+function cekFile2() {
+   var cek = document.forms['carii2']['cari1'].value;
+     if(cek==null || cek=="")
+     {
+       alert("Data harus di isi !!!");
+       return false;
+     }
+}
+</script>
 
 </head>
 
