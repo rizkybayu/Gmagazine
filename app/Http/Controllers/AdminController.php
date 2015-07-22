@@ -15,7 +15,7 @@ use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use App\User;
-
+use Auth;
 
 class AdminController extends Controller
 {
@@ -53,7 +53,7 @@ class AdminController extends Controller
         // $game->foto='images/news/ps4.png'; default ini
         $game->isi=$request->input('isi');
         $game->kategori=$request->input('kategori');
-        $game->pembuat= 'Rizky Bayu';
+        $game->pembuat= Auth::user()->name;
         $game->tag = $request->input('tag');
         $game->tgl_buat= Carbon::now();
         $game->save();

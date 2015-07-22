@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+    <meta content='FB Profile ID' property='fb:admins'/>
+    <meta content='App ID' property='fb:app_id'/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,9 +34,48 @@
 <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
 <!-- End WOWSlider.com HEAD section -->
 
+<script type="text/javascript">
+    //<![CDATA[
+    $(window).bind("load resize", function(){
+      var url = location.protocol+'//'+location.host+location.pathname;
+      var containercm_width = $('#container-commentfb').width();  
+        $('#container-commentfb').html('<div class="fb-comments" ' +
+        'data-href="'+url+'"' +
+        ' width="' + containercm_width + '" data-num-posts="10"></div>');
+        FB.XFBML.parse( );  
+    });
+    //]]>
+    </script>
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.4&appId=702058006594721";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '954886544550509',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <header>
     <!-- Navigation -->
@@ -124,13 +164,10 @@
         <div class="tags">
         <h3>Tags : </h3> <p>{{$artikel2->tag}}</p>
         </div>
-
         <div class="col-sm-12 col-xs-12">
-            <!-- begin htmlcommentbox.com -->
-            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a> is loading comments...</div>
-            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(""+window.location).replace(/'/g,"%27") || hcb_user.PAGE, h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-            <!-- end htmlcommentbox.com -->
+        <h3>Tambahkan Komentar !</h3>
+        <?php  // {{asset('/artikel/'.$artikel2->id)}} ?>
+        <div class="fb-comments" data-href="{{asset('/artikel/'.$artikel2->id)}}" data-width="100%" data-numposts="14"></div>
         </div>
         </div>
 
