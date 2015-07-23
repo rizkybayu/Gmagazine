@@ -28,6 +28,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        #share-buttons img {
+        width: 35px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+        }
+    </style>
 
 <!-- Start WOWSlider.com HEAD section -->
 <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
@@ -41,7 +50,7 @@
       var containercm_width = $('#container-commentfb').width();  
         $('#container-commentfb').html('<div class="fb-comments" ' +
         'data-href="'+url+'"' +
-        ' width="' + containercm_width + '" data-num-posts="10"></div>');
+        ' width="' + containercm_width + '" data-num-posts="14"></div>');
         FB.XFBML.parse( );  
     });
     //]]>
@@ -164,6 +173,32 @@
         <div class="tags">
         <h3>Tags : </h3> <p>{{$artikel2->tag}}</p>
         </div>
+        <!-- share button -->
+            <div class="col-sm-10 col-xs-12 col-md-10">
+      <div id="share-buttons">
+      <h4>Bagikan Ini Di :</h4>
+          <!-- Email -->
+          <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{asset('/artikel/'.$artikel2->id)}}">
+              <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+          </a>
+       
+          <!-- Facebook -->
+          <a href="http://www.facebook.com/sharer.php?u={{asset('/artikel/'.$artikel2->id)}}" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+          </a>
+          
+          <!-- Google+ -->
+          <a href="https://plus.google.com/share?url={{asset('/artikel/'.$artikel2->id)}}" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+          </a>
+          
+          <!-- Twitter -->
+          <a href="https://twitter.com/share?url={{asset('/artikel/'.$artikel2->id)}}" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+          </a>
+
+      </div>
+    </div>
         <div class="col-sm-12 col-xs-12">
         <h3>Tambahkan Komentar !</h3>
         <?php  // {{asset('/artikel/'.$artikel2->id)}} ?>
@@ -177,7 +212,8 @@
         <img src="{{asset('/images/ads/ad.jpg')}}" class="img-responsive"/>
         </div>
     </div>
-    </div>
+  </div>
+
 
 
 <!-- fpoter -->
