@@ -21,6 +21,9 @@
             <!-- FAV ICON -->
     <link rel="SHORTCUT ICON" href="{{asset('images/fav.png')}}" type="image/x-icon"/>
 
+      <link rel="stylesheet" href="{{asset('css/style.css')}}"> <!-- Gem style -->
+      <script src="{{asset('js/modernizr.js')}}"></script> <!-- Modernizr -->
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -55,7 +58,9 @@
     });
     //]]>
     </script>
-
+<!-- untuk script like -->
+<style> 
+</style>
 </head>
 
 <body>
@@ -201,11 +206,6 @@
             <div class="col-sm-10 col-xs-12 col-md-10">
       <div id="share-buttons">
       <h4>Bagikan Ini Di :</h4>
-          <!-- Email -->
-          <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{asset('/artikel/'.$artikel2->id)}}">
-              <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-          </a>
-       
           <!-- Facebook -->
           <a href="http://www.facebook.com/sharer.php?u={{asset('/artikel/'.$artikel2->id)}}" target="_blank">
               <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
@@ -218,7 +218,7 @@
           
           <!-- Twitter -->
           <a href="https://twitter.com/share?url={{asset('/artikel/'.$artikel2->id)}}" target="_blank">
-              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" tile="twitter"/>
           </a>
 
       </div>
@@ -237,7 +237,7 @@
         </div>
   </div>
 </div>
-
+<a href="#0" class="cd-top">Top</a>
 
 
 <!-- fpoter -->
@@ -342,7 +342,7 @@ function cekFile2() {
      }
 }
 </script>
-
+<script src="{{asset('js/main.js')}}"></script> <!-- Gem jQuery -->
 </body>
 
 </html>
