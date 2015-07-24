@@ -30,10 +30,10 @@
             </li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
-            <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search">
+            <form action="{{ url('/cari') }}" method="POST" name="carii" class="navbar-form" role="search" onsubmit="return cekFile()">
                 <div class="input-group">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="text" class="form-control" placeholder="Search" name="cari1">
+                    <input type="text" name="cari1" class="form-control" placeholder="Search" name="cari1">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -73,12 +73,9 @@
         <h3>Hasil Dari Cari "{{ $searchterm }}"</h3>
     <div class="col-lg-12">
 
-    <?php 
-    if (empty($results||$results=="")){
-        echo "<h2>Data Tidak Di Temukan</h2>";
-    }else{
-    ?>
-       @foreach($results as $val)
+    
+    @if($results||$results=="")
+    @foreach($results as $val)
         <div class="isi">
             <div class="col-lg-6">
             <div class="tambah">
@@ -95,10 +92,9 @@
             </div>
         </div>
         @endforeach
-        <?php
-        }   
-        ?>
-        
+    @else
+        <center><img src="{{asset('images/notfound.gif')}}" width="50%" height="50%" /></center>
+    @endif
         
 
         
@@ -114,7 +110,24 @@
       </div>
     </div>
     <!-- /.container -->
-
+<script>
+function cekFile() {
+   var cek = document.forms['carii']['cari1'].value;
+     if(cek==null || cek=="")
+     {
+       alert("Data harus di isi !!!");
+       return false;
+     }
+}
+function cekFile2() {
+   var cek = document.forms['carii2']['cari1'].value;
+     if(cek==null || cek=="")
+     {
+       alert("Data harus di isi !!!");
+       return false;
+     }
+}
+</script>
     <!--footer-->
 @include('footer')
     <!--end footer-->
