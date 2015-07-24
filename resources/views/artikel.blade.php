@@ -58,6 +58,18 @@
 </head>
 
 <body>
+<!-- for like -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- batas -->
+
+<!-- for comment -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -157,6 +169,7 @@
         <div class="col-sm-9 col-xs-12">
           <div class="judul"><h2>{{$artikel2->Judul}}</h2>
               <p><b>{{$artikel2->pembuat}}</b> , <i>{{ date('d F, Y', strtotime($artikel2->tgl_buat)) }}</i></p>
+              <div class="fb-like" data-href="{{asset('/artikel/'.$artikel2->id)}}" data-width="100%" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
               <hr>
           </div><!-- judul -->
 
