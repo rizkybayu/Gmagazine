@@ -28,7 +28,21 @@ navbar
 	font-family: 'Century Gothic';
 	color: white;
 }
+.posisil{
+	  margin-top: 5% !important;
+	  float: left !important;
+}
 
+/*=================
+MENU DI SIDEBAR
+==================*/
+.capruk{
+	float: left;
+	width:70px;
+	height: 200px;
+	background-color: red;
+	position: fixed;
+}
 /*====================================
 ISI
 =======================================*/

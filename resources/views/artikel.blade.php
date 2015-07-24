@@ -12,7 +12,6 @@
 
     <title>{{$artikel2->Judul}}</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -38,6 +37,7 @@
         }
     </style>
 
+
 <!-- Start WOWSlider.com HEAD section -->
 <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
 <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
@@ -55,9 +55,21 @@
     });
     //]]>
     </script>
+
 </head>
 
 <body>
+<!-- like page -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.4&appId=702058006594721";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- batas -->
+
 <!-- for like -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -99,7 +111,6 @@
 </script>
 
 <header>
-    <!-- Navigation -->
     <nav class="navbar navbar-inverse garis" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -127,7 +138,7 @@
             </li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
-            <form action="{{ url('/cari') }}" method="POST" class="navbar-form" role="search" name="carii" onSubmit="return cekFile()">
+            <form action="{{ url('/cari') }}" method="POST" name="carii" class="navbar-form" role="search" onSubmit="return cekFile()">
                 <div class="input-group">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="text" class="form-control" placeholder="Search" name="cari1">
@@ -136,7 +147,7 @@
                     </div>
                 </div>
             </form>
-        </div>        
+        </div>          
     </div>
 </nav>
 
@@ -221,11 +232,11 @@
 
     <!--sidebar-->
         <div class="col-sm-3 col-xs-12">
-        <div class="kanan">ADVERTISMENT</div><br>
-        <img src="{{asset('/images/ads/ad.jpg')}}" class="img-responsive"/>
+            <div class="kanan">ADVERTISMENT</div><br>
+            <img src="{{asset('/images/ads/ad.jpg')}}" class="img-responsive"/>
         </div>
-    </div>
   </div>
+</div>
 
 
 
@@ -311,7 +322,7 @@
     <script src="{{asset('js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <script>
 function cekFile() {
@@ -331,6 +342,7 @@ function cekFile2() {
      }
 }
 </script>
+
 </body>
 
 </html>
