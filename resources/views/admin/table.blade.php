@@ -60,7 +60,7 @@
                                 </div>
                             </nav>
                         </center>
-                        <button type="button" class="btn btn-primary">Export Ke PDF</button> <button type="button" class="btn btn-primary">Export ke Excel</button>
+                        <a href="{{ url('/pdf') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <button type="button" class="btn btn-primary">Export ke Excel</button>
                         </div>
                     </div>
                     <!--End Advanced Tables -->

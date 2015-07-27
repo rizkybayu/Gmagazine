@@ -45,7 +45,7 @@ Route::group(['prefix' => 'gm-admin', 'middleware' => 'auth'], function()
 {
 	Route::get('/index','AdminController@index');
 });
-
+Route::get('/pdf','AdminController@pdf');
 
 // Route::get('/mimin','AdminController@login'); //untuk login admin
  //dashboard admin

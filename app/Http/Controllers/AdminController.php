@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AdminController extends Controller
 {
@@ -107,6 +108,15 @@ class AdminController extends Controller
         return view('admin.table',compact('list_game'));
     }
 //BATAS MELIHAT DAN MENGEDIT DAN MENGHAPUS 
+
+//membuat pdf
+    public function pdf(){
+        $list_game = Game::get();
+        $hmm = Carbon::now();
+        $pdf = PDF::loadView('pdf.test', compact('list_game'));
+        return $pdf->download('Export'.Carbon::now().'.pdf');
+    }
+// batas membuat pdf
 
 //UNTUK MEMBUAT ADMIN 
     public function tambahadmin(){
