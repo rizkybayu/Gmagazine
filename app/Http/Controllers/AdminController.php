@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use Auth;
 use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel as Excel;
 
 class AdminController extends Controller
 {
@@ -111,12 +112,28 @@ class AdminController extends Controller
 
 //membuat pdf
     public function pdf(){
-        $list_game = Game::get();
+        $list_game = Game::all();
         $hmm = Carbon::now();
         $pdf = PDF::loadView('pdf.test', compact('list_game'));
-        return $pdf->download('Export'.Carbon::now().'.pdf');
+        return $pdf->download('ExportPdf'.Carbon::now().'.pdf');
     }
 // batas membuat pdf
+
+//membuat excel
+public function excel(){
+       $data = Game::all();
+
+       Excel::create('ExportExcel'.Carbon::now().'', function($excel) use($data) {
+
+       $excel->sheet('coba1', function($sheet) use($data) {
+
+           $sheet->fromArray($data);
+
+       });
+
+    })->export('xls');
+   }
+//batas membuat excel
 
 //UNTUK MEMBUAT ADMIN 
     public function tambahadmin(){
