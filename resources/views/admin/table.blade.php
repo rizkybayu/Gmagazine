@@ -45,7 +45,7 @@
                                             <td>{{$game->Judul}}</td>
                                             <td><div style="height:40px; overflow:hidden">{{$game->isi}}</div></td>
                                             <td><!-- <div style="height:40px; overflow:hidden"> --><center>{{$game->tgl_buat}}</center></div></td>
-                                            <td class="center">{{$game->kategori->kategori}}</td>
+                                            <td class="center">{{$game->dataKategori->kategori}}</td>
                                             <td class="center"><center><a href="{{url('/edit',$game->id)}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{ url('/hapus',$game->id) }}"><i class="fa fa-trash"></i></a></center></td>
                                         </tr>
                                     <?php $a++;?>

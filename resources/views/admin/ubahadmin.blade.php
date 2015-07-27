@@ -57,7 +57,7 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                             {!! Form::label('Kategori :') !!}
-                                            {!! Form::select('kategori',['Berita'=>'Berita','Game'=>'Game','Harga'=>'Harga','Hardware'=>'Hardware'], null, ['class'=>'form-control']) !!}
+                                            {!! Form::select('id_kategori',$kategori, null, ['class'=>'form-control']) !!}
                                             </div>
                                         </div>
                                             <!-- <select class="form-control">

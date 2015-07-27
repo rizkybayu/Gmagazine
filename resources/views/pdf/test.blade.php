@@ -31,7 +31,7 @@
 		<td><?php echo $a; ?></td>
 		<td>{{$game->Judul}}</td>
 		<td>{{$game->tgl_buat}}</td>
-		<td>{{$game->kategori}}</td>
+		<td>{{$game->datakategori->kategori}}</td>
 	</tr>
 	 <?php $a++;?>
 	@endforeach

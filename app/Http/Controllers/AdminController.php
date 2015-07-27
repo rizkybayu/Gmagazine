@@ -30,7 +30,7 @@ class AdminController extends Controller
     public function index()
     {
         $ambilArtikel = Game::get();
-        $ambilAdmin = Admin ::get();
+        $ambilAdmin = Admin::get();
         return view('admin.home',compact('ambilArtikel','ambilAdmin'));
     }
 
@@ -51,7 +51,7 @@ class AdminController extends Controller
 
     public function store(ArtikelRequest $request) //menyimpan
     {
-        
+
         $game = new Game();
         $game->judul=$request->input('judul');
         // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
@@ -88,7 +88,7 @@ class AdminController extends Controller
         // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
         // $game->foto='images/news/ps4.png';
         $game->isi=$request->input('isi');
-        $game->kategori=$request->input('kategori');
+        $game->id_kategori=$request->input('id_kategori');
         $game->pembuat= 'Rizky Bayu';
         $game->tag = $request->input('tag');
         $game->tgl_buat= Carbon::now();
@@ -100,8 +100,8 @@ class AdminController extends Controller
     public function edit($id)
     {
         $edit = Game::find($id);
-
-        return view('admin.ubahadmin',compact('edit'));
+        $kategori = Kategori::lists('kategori','id');
+        return view('admin.ubahadmin',compact('edit','kategori'));
     }
 //BATAS MEMBUAT ARTIKEL
 
@@ -116,8 +116,9 @@ class AdminController extends Controller
 //membuat pdf
     public function pdf(){
         $list_game = Game::all();
+        $kategori = Kategori::lists('kategori','id');
         $hmm = Carbon::now();
-        $pdf = PDF::loadView('pdf.test', compact('list_game'));
+        $pdf = PDF::loadView('pdf.test', compact('list_game','kategori'));
         return $pdf->download('ExportPdf'.Carbon::now().'.pdf');
     }
 // batas membuat pdf
@@ -125,12 +126,12 @@ class AdminController extends Controller
 //membuat excel
 public function excel(){
        $data = Game::all();
-
+       $kategori = Kategori::lists('kategori','id');
        Excel::create('ExportExcel'.Carbon::now().'', function($excel) use($data) {
 
        $excel->sheet('coba1', function($sheet) use($data) {
 
-           $sheet->fromArray($data);
+           $sheet->fromArray($data);;
 
        });
 
