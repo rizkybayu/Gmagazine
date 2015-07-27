@@ -48,16 +48,15 @@
                                         </div>
                                     <div class="form-group">
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" /> Remember me
+                                                <input type="checkbox" /> Ingat Saya ? ( Engga Kalo Mantan Mah )
                                             </label>
                                             <span class="pull-right">
-                                                   <a href="#" >Forget password ? </a> 
+                                                   <a href="#" >Lupa Password ? </a> 
                                             </span>
                                         </div>
                                      
                                      <a href="{{url('/dash')}}" class="btn btn-primary ">Login Now</a><!-- nanti ganti biar dinamis -->
                                     <hr />
-                                    Not register ? <a href="registeration.html" >click here </a> 
                                     </form>
                             </div>
                            

@@ -27,7 +27,7 @@ class ArtikelRequest extends Request
             'judul' => 'required|min:3',
             'isi' => 'required',
             'tag' => 'required',
-            'kategori' => 'required',
+            'id_kategori' => 'required',
             'image' => 'required|mimes:jpg,jpeg'
         ];
     }

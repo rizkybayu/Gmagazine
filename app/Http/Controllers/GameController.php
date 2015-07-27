@@ -58,6 +58,10 @@ class GameController extends Controller
        }
    }
 
+   //sorting
+
+   //batas sortng
+
     public function cek()
     {
         $data2 = Slider::get();

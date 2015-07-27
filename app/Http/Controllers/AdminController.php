@@ -6,6 +6,7 @@ use Request;
 
 use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
+use App\Database\Model\Kategori;
 use App\Database\Model\Admin;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
@@ -44,17 +45,19 @@ class AdminController extends Controller
 //UNTUK ARTIKEL
     public function tambah()
     {
-        return view('admin.form');
+        $kategori = Kategori::lists('kategori','id');
+        return view('admin.form', compact('kategori'));
     }
 
     public function store(ArtikelRequest $request) //menyimpan
     {
+        
         $game = new Game();
         $game->judul=$request->input('judul');
         // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
         // $game->foto='images/news/ps4.png'; default ini
         $game->isi=$request->input('isi');
-        $game->kategori=$request->input('kategori');
+        $game->id_kategori=$request->input('id_kategori');
         $game->pembuat= Auth::user()->name;
         $game->tag = $request->input('tag');
         $game->tgl_buat= Carbon::now();

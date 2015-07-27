@@ -8,4 +8,7 @@ class Game extends Model{
 	protected $primaryKey = "id";
 	public $timestamps = false;
 
+	public function kategori(){
+		return $this->belongsTo('App\Database\Model\Kategori','id_kategori');
+	}
 }
