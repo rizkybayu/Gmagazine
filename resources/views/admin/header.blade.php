@@ -47,7 +47,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                         <a  href="{{url('/gm-admin/index')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>Artikel<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-newspaper-o fa-3x"></i></i>Artikel<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/lihatartikel">Daftar Artikel</a>
@@ -66,7 +66,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                     </li>   -->
 
                       <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>Kategori<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-tags fa-3x"></i>Kategori<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/lihatkategori">Daftar Kategori</a>
