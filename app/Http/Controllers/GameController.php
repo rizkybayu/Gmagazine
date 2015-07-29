@@ -50,9 +50,6 @@ class GameController extends Controller
 
 
            $results = Game::Where('Judul', 'LIKE', '%'. $searchterm .'%')->get();
-           if($searchterm == null){
-               return ('404 Not Found');
-           }
            return view('cari', compact('results', 'searchterm','data2'));
 
        }

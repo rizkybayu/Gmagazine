@@ -73,24 +73,23 @@
         <h3>Hasil Dari Cari "{{ $searchterm }}"</h3>
     <div class="col-lg-12">
 
-    
-    @if($results||$results=="")
-    @foreach($results as $val)
-        <div class="isi">
-            <div class="col-lg-6">
-            <div class="tambah">
-            <div class="row">
-              <div class="kotak2">
-                  <img src="{{ asset('images/news')}}/{{'cover'.$val->id}}.jpg" class="img-responsive">
-                  <div class="ket">
-                  <div class="tag">{{ $val->dataKategori->kategori}}</div>
-                        <p><a href="{{ url('artikel',$val->id) }}">{{ $val->Judul }}</a></p>
+    @if(count($results) != 0)
+        @foreach($results as $val)
+            <div class="isi">
+                <div class="col-lg-6">
+                <div class="tambah">
+                <div class="row">
+                  <div class="kotak2">
+                      <img src="{{ asset('images/news')}}/{{'cover'.$val->id}}.jpg" class="img-responsive">
+                      <div class="ket">
+                      <div class="tag">{{ $val->dataKategori->kategori}}</div>
+                            <p><a href="{{ url('artikel',$val->id) }}">{{ $val->Judul }}</a></p>
+                      </div>
                   </div>
-              </div>
+                </div>
+                </div>
+                </div>
             </div>
-            </div>
-            </div>
-        </div>
         @endforeach
     @else
         <center><img src="{{asset('images/notfound.gif')}}" width="50%" height="50%" /></center>
