@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Slider;
 use DB;
+use App\Database\Model\Kategori;
 
 class GameController extends Controller
 {
@@ -42,14 +43,13 @@ class GameController extends Controller
 
     public function cari(Request $request){
         $data2 = Slider::get();
+        
+
        $searchterm = $request->input('cari1');
        if ($searchterm){
 
 
-           $products = DB::table('tbl_game');
-           $results = $products->where('id', 'LIKE', '%'. $searchterm .'%')
-               ->orWhere('Judul', 'LIKE', '%'. $searchterm .'%')
-               ->get();
+           $results = Game::Where('Judul', 'LIKE', '%'. $searchterm .'%')->get();
            if($searchterm == null){
                return ('404 Not Found');
            }
