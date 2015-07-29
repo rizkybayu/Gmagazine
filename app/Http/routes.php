@@ -58,12 +58,22 @@ Route::get('/excel','AdminController@excel');
 Route::get('/tambahartikel','AdminController@tambah'); //menu untuk tambah artikel admin
 Route::get('/lihatartikel','AdminController@lihat'); //menu untuk melihat artikel
 Route::get('/tambahadmin','AdminController@tambahadmin'); //menu untuk tambah admin
+Route::get('/tambahkategori','AdminController@tambahkategori'); //menu untuk tambah kategori
+Route::get('/ubahkategori','AdminController@ubahkategori'); //menuu untuk lihat kategori
+Route::get('/lihatkategori','AdminController@lihatkategori'); //menuu untuk lihat kategori
 
 //PROSES DI ADMIN
 Route::post('/store','AdminController@store'); //UNTUK MENYIMPAN
+Route::post('/tambah_kategori','AdminController@simpankategori'); //menyimpan kategori
 Route::post('/tambah_admin','AdminController@tambah_admin'); //UNTUK MENYIMPAN
 //Route::delete('/hapus/{id}','AdminController@hapus'); //menghapus
 Route::get('/hapus/{id}','AdminController@hapus');
 
+//edit artikel
 Route::get('/edit/{id}','AdminController@edit'); //untuk mengambil id untuk mengubah
 Route::put('/ubah/{id}','AdminController@ubah'); //proses ubah
+
+//edit kategori
+Route::get('/edit_kateg/{id}','AdminController@edit_kateg'); //untuk mengambil id untuk mengubah
+Route::get('/hapus_kateg/{id}','AdminController@hapus_kateg'); //proses ubah
+Route::put('/ubah_kateg/{id}','AdminController@ubah_kateg');

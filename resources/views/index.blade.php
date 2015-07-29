@@ -80,7 +80,7 @@
               <div class="kotak2">
                   <img src="{{ asset('images/news')}}/{{'cover'.$val->id}}.jpg" class="img-responsive">
                   <div class="ket">
-                  <div class="tag">{{$val->dataKategori->kategori}}</div>
+                  <div class="tag">{{$val->dataKategori ? $val->dataKategori->kategori : '' }}</div>
                         <p><a href="{{ url('artikel',$val->id) }}">{{ $val->Judul }}</a></p>
                   </div>
               </div>

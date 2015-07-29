@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Auth;
+use App\Http\Requests\UbkategRequest;
+use App\Http\Requests\KategoriRequest;
 use Barryvdh\DomPDF\Facade as PDF;
 use Maatwebsite\Excel\Facades\Excel as Excel;
 
@@ -155,6 +157,48 @@ public function excel(){
         return redirect('/tambahadmin');
     }
 // BATAS UNTUK MEMBUAT ADMIN
+
+//tambah dan lihat kategori
+    public function tambahkategori(){
+        return view('admin.tambahkategori');
+    }
+
+    public function simpankategori(KategoriRequest $request3){
+        $kategori = new Kategori();
+        $kategori->kategori = $request3->input('kategori');
+        $kategori->save();
+
+        \Session::flash('flash_message','Berhasil Menambahkan Kategori !');
+        return redirect('/tambahkategori');
+    }
+
+    public function lihatkategori(){    
+        $list_kategori = Kategori::paginate(10);
+        return view('admin.lihatkategori',compact('list_kategori'));
+    }
+
+    public function hapus_kateg($id){
+        Kategori::find($id)->delete();
+
+        \Session::flash('flash_message','Berhasil menghapus Kategori !');
+        return redirect('/lihatkategori');
+    }
+
+    public function ubah_kateg($id,UbkategRequest $request)
+    {
+        $kategori = Kategori::find($id);
+        $kategori->kategori=$request->input('ubah_kategs');
+        $kategori->save();
+        \Session::flash('flash_message','Berhasil mengubah Kategori !');
+        return redirect('/lihatkategori');
+    }
+
+    public function edit_kateg($id)
+    {
+        $edit = Kategori::find($id);
+        return view('admin.ubahkategori',compact('edit'));
+    }
+//batas 
 
     public function hmm()
     {

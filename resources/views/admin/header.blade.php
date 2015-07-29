@@ -46,12 +46,43 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                     <li>
                         <a  href="{{url('/gm-admin/index')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
-                      <li>
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>Artikel<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/lihatartikel">Daftar Artikel</a>
+                            </li>
+                            <li>
+                                <a href="/tambahartikel">Tambah Artikel</a>
+                            </li>
+                        </ul>
+                      </li> 
+
+<!--                       <li>
                         <a  href="{{url('/lihatartikel')}}"><i class="fa fa-table fa-3x"></i>Daftar Artikel</a>
                       </li>
                     <li>
                         <a class=""  href="{{url('/tambahartikel')}}"><i class="fa fa-edit fa-3x"></i>Tambah Artikel</a>
-                    </li>                 
+                    </li>   -->
+
+                      <li>
+                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>Kategori<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/lihatkategori">Daftar Kategori</a>
+                            </li>
+                            <li>
+                                <a href="/tambahkategori">Tambah Kategori</a>
+                            </li>
+                        </ul>
+                      </li> 
+<!-- 
+                      <li>
+                        <a  href="{{url('/lihatkategori')}}"><i class="fa fa-table fa-3x"></i>Daftar Kategori</a>
+                      </li>
+                    <li>
+                        <a class=""  href="{{url('/tambahkategori')}}"><i class="fa fa-edit fa-3x"></i>Tambah Kategori</a>
+                    </li>   -->               
                      <!-- <li>
                         <a   href="{{url('auth/register')}}"><i class="fa fa-laptop fa-3x"></i>Tambah Admin</a>
                     </li>    -->

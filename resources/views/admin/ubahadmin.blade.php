@@ -5,8 +5,8 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Tambah Artikel</h2>   
-                        <h5>Welcome Rizky Bayu</h5>
+                     <h2>Ubah Artikel</h2>   
+                        <h5>Welcome {{ Auth::user()->name }}</h5>
                        
                     </div>
                 </div>
