@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2015-07-29 12:31:51
+Date: 2015-07-30 14:59:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -92,7 +92,26 @@ INSERT INTO `tbl_game` VALUES ('58', 'The Division di tunda !', '<p>The Division
 INSERT INTO `tbl_game` VALUES ('59', 'One piece warrior 3 Rilis !!', '<p>Kali ini sekitar, bajak laut prajurit 3 akan mencakup satu bagian dari awal dari manga, menampilkan total 37 playable karakter.Dalam kasus anda mereka khawatir, dua pemain kooperasi adalah dipertegas lagi di ps3 dan ps4, kedua offline dan -- online versi vita akan menampilkan ad hoc dan dukungan wi-fi.Pada pc, namun, offline kooperasi adalah sebuah pergi, tetapi &#39; online mungkin melewati &#39; menurut tecmo koei &#39;s hisashi koinuma.</p>\r\n\r\n<p>Meski demikian kenyataannya, omega force &#39; sangat senang dengan dinasti prajurit penjualan untuk pc, &#39; sehingga akan terus mendukung platform.Sesuatu yang mungkin.Koinuma menyatakan bahwa perubahan terbesar adalah gaya visual.Aku bertanya apa keuntungan yang untuk ps4 platform, untuk yang ia menjawab, yang &#39; ps4 toon shading sistem membuat terlihat dekat dengan asli manga atau anime, yang terbaik di ps4.Juga, yang dapat ps4 tuan rumah 200 musuh di layar sementara ps3 hanya bisa melakukan 100. &#39;Ini semakin gila dengan itu banyak musuh sekaligus, sejak karakter sekarang dapat melakukan quad-ally supers yang melibatkan seluruh tim anda.Bermain</p>\r\n', 'Rizky Bayu', '2015-07-23', '#ONEPIECE', '1');
 INSERT INTO `tbl_game` VALUES ('60', 'Crisis 3', '<p>The hunted becomes the hunter in the CryEngine-powered open-world shooter Crysis 3! Players take on the role of &#39;Prophet&#39; as he returns to New York in the year in 2047, only to discover that the city has been encased in a Nanodome created by the corrupt Cell Corporation. The New York City Liberty Dome is a veritable urban rainforest teeming with overgrown trees, dense swamplands and raging rivers. Within the Liberty Dome, seven distinct and treacherous environments become known as the Seven Wonders. This dangerous new world demands advanced weapons and tactics. Prophet will utilize a lethal composite bow, an enhanced Nanosuit and devastating alien tech to become the deadliest hunter on the planet.</p>\r\n\r\n<p>Prophet is on a revenge mission after uncovering the truth behind Cell Corporation&#39;s motives for building the quarantined Nanodomes. The citizens were told that the giant citywide structures were resurrected to protect the population and to cleanse these metropolises of the remnants of Ceph forces. In reality, the Nanodomes are CELL&#39;s covert attempt at a land and technology grab in their quest for global domination. With Alien Ceph lurking around every corner and human enemies on the attack, nobody is safe in the path of vengeance. Everyone is a target in Prophet&#39;s quest for retribution.</p>\r\n', 'Rizky Bayu', '2015-07-22', '#CRISIS3 #GAMEOFTHEDAY #FPS', '3');
 INSERT INTO `tbl_game` VALUES ('61', 'Meet Your Maker Bubar!', '<p><strong>IndoDota2&nbsp;</strong>&ndash; Meet Your Maker adalah salah satu tim Dota terbaik di dunia. Entah sudah berapa banyak piala yang mreka menangkan dari turnament besar yang diadakan di seluruh pelosok dunia. Gua sendiri sangat suka dengan cara khas bermain Maelk, sang kapten. Benar2 super jenius.</p>\r\n\r\n<p>Jadi ceritanya Meet Your Makers atau disingkat MYM dinyatakan bubar oleh Maelk sendiri setelah turnmanen Dota 2 International. Walaupun hasil yang mereka capai cukup memuaskan bagi tim dan juga para fans nya yaitu peringkat ke 4, tapi Maelk dan kawan2 tetap akan bubar juga.</p>\r\n\r\n<p>Menurut Maelk, setiap orang ingin menempuh jalannya masing2. Mungkin ada yang bergabung dengan tim besar lainnya, ada juga melanjutkan kehidupan nyata seperti bekerja dan kuliah. Tapi Maelk tidak menyinggung apapun tentang seseorang secara spesifik, ia hanya mengatakan bahwa masing2 dari mereka ingin masuk ke era baru dengan adanya game yang baru juga.</p>\r\n', 'Rizky Bayu', '2015-07-22', '#Dota2', '1');
-INSERT INTO `tbl_game` VALUES ('62', 'Spongebob Rilis', '<p>Dikabarkan nickgelodion akan membuat game yang bertemakan sponegbob kembali dan akan membuat fitur game yang sangat bagus&nbsp;dan asik untuk dimanakan oleh anak anak bahkan hingga orang dewasa , game ini dikabarkan diliris pada akhir Desember&nbsp;tersedia di pc dan ps3 dan ps4 , game spongebob ini bertemakan open world sehingga pemain bisa sangat puas mengililingi&nbsp;kota bikini bottom dan pemain juga juga membunuh warga sekitar menarik bukan ? ayo kita lihat saja nanti pada akhir desember !</p>\r\n', 'Rizky Bayu', '2015-07-29', '#SPONGEBOB', '1');
+INSERT INTO `tbl_game` VALUES ('62', 'Spongebob Rilis', '<p>Dikabarkan nickgelodion akan membuat game yang bertemakan sponegbob kembali dan akan membuat fitur game yang sangat bagus&nbsp;dan asik untuk dimanakan oleh anak anak bahkan hingga orang dewasa , game ini dikabarkan diliris pada akhir Desember&nbsp;tersedia di pc dan ps3 dan ps4 , game spongebob ini bertemakan open world sehingga pemain bisa sangat puas mengililingi&nbsp;kota bikini bottom dan pemain juga juga membunuh warga sekitar menarik bukan ? ayo kita lihat saja nanti pada akhir desember !</p>\r\n', 'Rizky Bayu', '2015-07-30', '#SPONGEBOB', '1');
+
+-- ----------------------------
+-- Table structure for tbl_games
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_games`;
+CREATE TABLE `tbl_games` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_game` varchar(255) DEFAULT NULL,
+  `harga` int(255) DEFAULT NULL,
+  `stok` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tbl_games
+-- ----------------------------
+INSERT INTO `tbl_games` VALUES ('1', 'Dead Rising', '50000', '10');
+INSERT INTO `tbl_games` VALUES ('2', 'Call of duty Black Ops', '90000', '20');
+INSERT INTO `tbl_games` VALUES ('3', 'Ghost Buster', '60000', '14');
 
 -- ----------------------------
 -- Table structure for tbl_kategori
@@ -102,7 +121,7 @@ CREATE TABLE `tbl_kategori` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_kategori
@@ -128,6 +147,23 @@ INSERT INTO `tbl_slider` VALUES ('data1/tooltips/3.jpg');
 INSERT INTO `tbl_slider` VALUES ('data1/tooltips/1.jpg');
 
 -- ----------------------------
+-- Table structure for tbl_transaksi
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_transaksi`;
+CREATE TABLE `tbl_transaksi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_pembeli` varchar(255) DEFAULT NULL,
+  `tgl_beli` datetime DEFAULT NULL,
+  `jumlah_beli` int(255) DEFAULT NULL,
+  `fk_game` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tbl_transaksi
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
@@ -147,4 +183,4 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('1', 'restu', 'restu@javan.co.id', '$2y$10$9DNKIUhH80mGqSVCtbvUp.984MCuF5bd4LZpkhje4IPAM/4VorStK', 'PFNm4gfyqVgGIJbifJV9h2lJmrNbbdwIZoSMNi5T6dbrc3kto6LRSifjnKO5', '2015-07-14 09:01:51', '2015-07-27 08:10:53');
-INSERT INTO `users` VALUES ('2', 'Rizky Bayu', 'rizkybayu66@gmail.com', '$2y$10$qbwRMvXbVQclA6Z1R7WoAOWyx6RwP4OTf8BXe3LEuJd3w3Ae3dnuK', 'rNzosLoIpT1UzgEjUPSfgkxSYUe1lqEWOwQAvsSGOaCs6m9YkCiesJ1hz24Q', '2015-07-14 09:51:35', '2015-07-29 04:04:46');
+INSERT INTO `users` VALUES ('2', 'Rizky Bayu', 'rizkybayu66@gmail.com', '$2y$10$qbwRMvXbVQclA6Z1R7WoAOWyx6RwP4OTf8BXe3LEuJd3w3Ae3dnuK', 'Fl2m3bwZlynGPCIYgojrtCibVJ5yugp4EPOY29a75VlyBxnW6tYb0vYZ84Uu', '2015-07-14 09:51:35', '2015-07-30 07:25:23');

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Database\Model\Game;
 use App\Database\Model\Kategori;
 use App\Database\Model\Admin;
+use App\Database\Model\Gamez;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
 use App\Http\Requests\ArtikelRequest;
@@ -33,7 +34,8 @@ class AdminController extends Controller
     {
         $ambilArtikel = Game::get();
         $ambilAdmin = Admin::get();
-        return view('admin.home',compact('ambilArtikel','ambilAdmin'));
+        $ambilGame = Gamez::get();
+        return view('admin.home',compact('ambilArtikel','ambilAdmin','ambilGame'));
     }
 
 //UNTUK ADMIN LOGIN

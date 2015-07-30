@@ -50,19 +50,22 @@
     <div class="row">
         <div class="col-sm-12 col-md-12 col-xs-12">
         <div class="row">
-        <?php 
-        for($a=1;$a<9;$a++){
-        ?>
+        @if(count($data) != 0)
+        @foreach($data as $game)
             <div class="col-sm-3">
                 <div class="kontenBarang">
-                    <img src="{{ asset('images/games')}}/deadrising.jpg" class="img-responsive">
-                    <h3>Dead Rising 3</h3>
+                    <img src="{{ asset('images/games')}}/{{'game'.$game->id}}.jpg" class="img-responsive">
+                    <h3>{{ $game->nama_game }}</h3>
+                    <p>Harga : <?php echo 'Rp. ' . number_format( $game['harga'], 0 , '' , '.' )?></p>
+                    <p>Stok : {{$game->stok}}</p>
                     <center><button class="btn btn-warning"><b>Pesan Sekarang!</b></button></center>
                 </div>
             </div>
-        <?php
-        }
-        ?>
+        @endforeach
+              
+        @else
+             <center><img src="{{asset('images/notfound.gif')}}" width="50%" height="50%" /></center> 
+        @endif
         </div>
         </div>
     </div>

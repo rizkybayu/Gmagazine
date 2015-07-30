@@ -79,4 +79,6 @@ Route::get('/hapus_kateg/{id}','AdminController@hapus_kateg'); //proses ubah
 Route::put('/ubah_kateg/{id}','AdminController@ubah_kateg');
 
 //TRANSAKSI
-Route::get('/beli','TransaksiController@index');
+Route::get('/beli','TransaksiController@index'); // menampilkan menu beli
+Route::get('/tambahgame','TransaksiController@tambahGame');// untuk melihat view tambah game
+Route::post('/tambah_game','TransaksiController@simpanGame'); // untuk melakukan proses simpan game

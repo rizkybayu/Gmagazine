@@ -52,7 +52,7 @@
                     <i class="fa fa-gamepad"></i>
                 </span>
                 <div class="text-box">
-                    <center><p class="main-text">0</p></center>
+                    <center><p class="main-text">{{ $ambilGame->count() }}</p></center>
                     <center><p class="text-muted">Games</p></center>
                 </div>
              </div>

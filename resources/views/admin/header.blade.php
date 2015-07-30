@@ -83,7 +83,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                                 <a href="#">List Game</a>
                             </li>
                             <li>
-                                <a href="#">Tambah Game</a>
+                                <a href="{{url('/tambahgame')}}">Tambah Game</a>
                             </li>
                         </ul>
                       </li> 

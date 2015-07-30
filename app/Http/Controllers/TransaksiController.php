@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GameRequest;
+use App\Database\Model\Gamez;
+use App\Database\Model\Transaksi;
+use Carbon;
 
 class TransaksiController extends Controller
 {
@@ -16,8 +20,34 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        return view('beli');
+        $data = Gamez::paginate(8);
+        return view('beli',compact('data'));
     }
+
+//view dan proses tambah game
+    public function tambahGame(){
+        return view('admin.tambahgame');
+    }
+    public function simpanGame(GameRequest $request){
+        $game = new Gamez();
+        $game->nama_game=$request->input('nama_game');
+        // $game->foto=$request->input('judul'); TERAKHIR atau di skip tapi di ganti jadi default
+        // $game->foto='images/news/ps4.png'; default ini
+        $game->stok=$request->input('stok');
+        $game->harga=$request->input('harga');
+        $game->save();
+
+        $imageName = "game".$game->id . '.' . 
+        $request->file('image')->getClientOriginalExtension();
+
+        $request->file('image')->move(
+            base_path() . '/public/images/games/', $imageName
+        );
+
+        \Session::flash('flash_message','Berhasil Menambahkan Game');
+        return redirect('/tambahgame');
+    }   
+//BATAS 
 
     /**
      * Show the form for creating a new resource.
