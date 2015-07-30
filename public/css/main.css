@@ -262,21 +262,20 @@ TRANSAKSI
 .kontenBarang{
 	height: 360px;
 	width:100%;
-	background-color: #333;
 	float: left; 
 	margin-bottom: 10px;
-	border-radius: 10px;
-	border:1px solid;
+	
 }
 .kontenBarang img{
 	height: 250px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 10px;
+	border-radius: 25px;
 
 }
 .kontenBarang h3{
 	font-weight: 700;
-	color: white;
+	color: black;
 	text-align: center;
 }

@@ -57,7 +57,7 @@
                 <div class="kontenBarang">
                     <img src="{{ asset('images/games')}}/deadrising.jpg" class="img-responsive">
                     <h3>Dead Rising 3</h3>
-                    <center><button class="btn btn-danger">Pesan Sekarang!</button></center>
+                    <center><button class="btn btn-warning"><b>Pesan Sekarang!</b></button></center>
                 </div>
             </div>
         <?php

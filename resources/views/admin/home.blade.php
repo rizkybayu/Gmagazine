@@ -24,17 +24,39 @@
                 </div>
              </div>
 		     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
+      <div class="col-md-3 col-sm-6 col-xs-6">           
+			     <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-laptop"></i>
+                    <i class="fa fa-check"></i>
                 </span>
                 <div class="text-box">
-                    <center><p class="main-text">{{$ambilAdmin->count()}}</p></center>
-                    <center><p class="text-muted">Admin</p></center>
+                    <center><p class="main-text">0</p></center>
+                    <center><p class="text-muted">Approve Transaksi</p></center>
                 </div>
              </div>
 		     </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">           
+           <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon">
+                    <i class="fa fa-circle-o-notch"></i>
+                </span>
+                <div class="text-box">
+                    <center><p class="main-text">0</p></center>
+                    <center><p class="text-muted">Pending Transaksi</p></center>
+                </div>
+             </div>
+         </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">           
+           <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-brown set-icon">
+                    <i class="fa fa-gamepad"></i>
+                </span>
+                <div class="text-box">
+                    <center><p class="main-text">0</p></center>
+                    <center><p class="text-muted">Games</p></center>
+                </div>
+             </div>
+         </div>
 			</div>
                  <!-- /. ROW  -->
                 <hr />                       
