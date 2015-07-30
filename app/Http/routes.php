@@ -77,3 +77,6 @@ Route::put('/ubah/{id}','AdminController@ubah'); //proses ubah
 Route::get('/edit_kateg/{id}','AdminController@edit_kateg'); //untuk mengambil id untuk mengubah
 Route::get('/hapus_kateg/{id}','AdminController@hapus_kateg'); //proses ubah
 Route::put('/ubah_kateg/{id}','AdminController@ubah_kateg');
+
+//TRANSAKSI
+Route::get('/beli','TransaksiController@index');

@@ -253,3 +253,30 @@ a:hover {
   color: #E60000;
   text-decoration: none;
 }
+
+/*========================
+TRANSAKSI
+==========================*/
+
+/*konten barang*/
+.kontenBarang{
+	height: 360px;
+	width:100%;
+	background-color: #333;
+	float: left; 
+	margin-bottom: 10px;
+	border-radius: 10px;
+	border:1px solid;
+}
+.kontenBarang img{
+	height: 250px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+
+}
+.kontenBarang h3{
+	font-weight: 700;
+	color: white;
+	text-align: center;
+}

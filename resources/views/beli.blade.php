@@ -15,8 +15,8 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="{{url('/')}}">Berita</a></li>
-            <li><a href="{{ url('/beli') }}">Beli Games</a></li>
+            <li><a href="{{url('/')}}">Berita</a></li>
+            <li  class="active"><a href="{{ url('/beli') }}">Beli Games</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -45,63 +45,28 @@
 
     <!-- Page Content -->
 
-<!-- Start WOWSlider.com BODY section -->
-<div id="wowslider-container1">
-<div class="ws_images"><ul>
-        <li><img src="data1/images/1.jpg" alt="1" title="1" id="wows1_0"/></li>
-        <li><a href="http://wowslider.com"><img src="data1/images/2.jpg" alt="responsive carousel" title="2" id="wows1_1"/></a></li>
-        <li><img src="data1/images/3.jpg" alt="3" title="3" id="wows1_2"/></li>
-    </ul></div>
-    <div class="ws_bullets"><div>
-    <?= $a=1;?>
-    @foreach($data2 as $slide)
-        <a href="#" title="1"><span><img src="{{$slide->foto}}" alt="<?= $a; ?>"/><?= $a; ?></span></a>
-    <?= $a++; ?>
-    @endforeach
-    </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">css image gallery</a> by WOWSlider.com v8.2</div>
-<div class="ws_shadow"></div>
-</div>  
-<script type="text/javascript" src="engine1/wowslider.js"></script>
-<script type="text/javascript" src="engine1/script.js"></script>
-<!-- End WOWSlider.com BODY section -->
-    <!-- /.container -->
-
-
     <!-- Page Content -->
-    <div class="container">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-xs-12">
         <div class="row">
-    <div class="col-lg-12">
-
-        @foreach ($data as $val )
-        <div class="isi">
-            <div class="col-lg-6">
-            <div class="tambah">
-            <div class="row">
-              <div class="kotak2">
-                  <img src="{{ asset('images/news')}}/{{'cover'.$val->id}}.jpg" class="img-responsive">
-                  <div class="ket">
-                  <div class="tag">{{$val->dataKategori ? $val->dataKategori->kategori : '' }}</div>
-                        <p><a href="{{ url('artikel',$val->id) }}">{{ $val->Judul }}</a></p>
-                  </div>
-              </div>
+        <?php 
+        for($a=1;$a<9;$a++){
+        ?>
+            <div class="col-sm-3">
+                <div class="kontenBarang">
+                    <img src="{{ asset('images/games')}}/deadrising.jpg" class="img-responsive">
+                    <h3>Dead Rising 3</h3>
+                    <center><button class="btn btn-danger">Pesan Sekarang!</button></center>
+                </div>
             </div>
-            </div>
-            </div>
+        <?php
+        }
+        ?>
         </div>
-        @endforeach
-
-        
-
-        <center>
-        <nav style="clear:both">
-        <div class="pagination">
-            {!!$data->render()!!}
         </div>
-        </nav>
-        </center>
-        </div>
-      </div>
     </div>
+</div>
     <!-- /.container -->
 
     <!--footer-->
