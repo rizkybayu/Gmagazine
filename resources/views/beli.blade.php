@@ -68,6 +68,11 @@
         @endif
         </div>
         </div>
+                            <nav style="clear:both">
+                                <div class="pagination">
+                                {!! str_replace('/?', '?', $data->render()) !!}
+                                </div>
+                            </nav>
     </div>
 </div>
     <!-- /.container -->

@@ -80,7 +80,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                         <a href="#"><i class="fa fa-gamepad fa-3x"></i>Games<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">List Game</a>
+                                <a href="{{url('/listgame')}}">List Game</a>
                             </li>
                             <li>
                                 <a href="{{url('/tambahgame')}}">Tambah Game</a>

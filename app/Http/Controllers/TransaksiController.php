@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GameRequest;
+use App\Http\Requests\GameRequestEdit;
 use App\Database\Model\Gamez;
 use App\Database\Model\Transaksi;
 use Carbon;
@@ -46,7 +47,33 @@ class TransaksiController extends Controller
 
         \Session::flash('flash_message','Berhasil Menambahkan Game');
         return redirect('/tambahgame');
-    }   
+    }  
+
+    public function lihatGame(){
+        $list_game = Gamez::paginate(10);
+        return view('admin.lihatgames',compact('list_game'));
+    }
+
+    public function hapusGame($id){
+        Gamez::find($id)->delete();
+
+        \Session::flash('flash_message','Berhasil menghapus Game !');
+        return redirect('/listgame');
+    }
+
+    public function editGame($id){
+        $edit = Gamez::find($id);
+        return view('admin.ubahgame',compact('edit'));
+    } 
+    public function edit_game($id,GameRequestEdit $request){
+        $game = Gamez::find($id);
+        $game->nama_game=$request->input('nama_game');
+        $game->stok=$request->input('stok');
+        $game->harga=$request->input('harga');
+        $game->save();
+        \Session::flash('flash_message','Berhasil mengubah Games !');
+        return redirect('/listgame');
+    }
 //BATAS 
 
     /**
