@@ -76,6 +76,12 @@ class TransaksiController extends Controller
     }
 //BATAS 
 
+//TRANSAKSI
+    public function transaksiView($id){
+        $yangdipilih = Gamez::find($id);
+        return view('transaksi',compact('yangdipilih'));
+    }
+//BATAS TRANSAKSI
     /**
      * Show the form for creating a new resource.
      *

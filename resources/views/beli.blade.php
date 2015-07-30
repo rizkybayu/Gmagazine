@@ -58,7 +58,7 @@
                     <h3>{{ $game->nama_game }}</h3>
                     <p>Harga : <?php echo 'Rp. ' . number_format( $game['harga'], 0 , '' , '.' )?></p>
                     <p>Stok : {{$game->stok}}</p>
-                    <center><button class="btn btn-warning"><b>Pesan Sekarang!</b></button></center>
+                    <center><a href="{{url('/transaksi',$game->id)}}"><button class="btn btn-warning"><b>Pesan Sekarang!</b></button></a></center>
                 </div>
             </div>
         @endforeach

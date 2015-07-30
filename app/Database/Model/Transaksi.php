@@ -8,4 +8,7 @@ class Transaksi extends Model{
 	protected $primaryKey = "id";
 	public $timestamps = false;
 
+	public function game(){
+		return $this->belongsTo('App\Database\Model\Gamez','fk_game');
+	}
 }
