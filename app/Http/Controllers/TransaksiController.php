@@ -12,6 +12,9 @@ use App\Http\Requests\TransaksiRequest;
 use App\Database\Model\Gamez;
 use App\Database\Model\Transaksi;
 use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel as Excel;
+
 class TransaksiController extends Controller
 {
     /**
@@ -123,6 +126,53 @@ class TransaksiController extends Controller
 
 
 //BATAS 
+
+//EKSPORT PDF DAN EXPORT EXCEL PENDING 
+    public function pdfPen(){
+        $list_pending= Transaksi::where('stt','0')->get();
+
+        $pdf = PDF::loadView('pdf.PdfTransPen', compact('list_pending'));
+        return $pdf->download('ExportPdftransPending'.Carbon::now().'.pdf');
+        // FIXED COY
+    }
+
+    public function excelPen(){
+       $data = Transaksi::where('stt','0')->all();
+       Excel::create('ExportExcelTransaksiPending'.Carbon::now().'', function($excel) use($data) {
+
+       $excel->sheet('coba1', function($sheet) use($data) {
+
+           $sheet->fromArray($data);;
+
+       });
+
+    })->export('xls');        
+    }
+
+//BATAS
+
+//EKSPORT PDF DAN EXCEL APPROVED
+    public function pdfApp(){
+        $list_approved= Transaksi::where('stt','1')->get();
+
+        $pdf = PDF::loadView('pdf.PdfTransApp', compact('list_approved'));
+        return $pdf->download('ExportPdftransApproved'.Carbon::now().'.pdf');
+    }
+    
+    public function excelApp(){
+       $data = Transaksi::where('stt','1')->get();
+       Excel::create('ExportExcelTransaksiApproved'.Carbon::now().'', function($excel) use($data) {
+
+       $excel->sheet('coba1', function($sheet) use($data) {
+
+           $sheet->fromArray($data);;
+
+       });
+
+    })->export('xls');       
+    }
+
+//BATAS
     /**
      * Show the form for creating a new resource.
      *
