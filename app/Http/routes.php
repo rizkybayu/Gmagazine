@@ -98,5 +98,8 @@ Route::get('/approve','TransaksiController@lihatApprove'); //melihat daftar tran
 Route::get('/pdfTransPen','TransaksiController@pdfPen'); // NOT PROGRES !
 Route::get('/excelTransPen','TransaksiController@excelPen'); // NOT PROGRESS !
 
+//ganti status
+Route::get('/GantiStatus/{id}','TransaksiController@GantiStatus'); //GANTI STATUS
+
 Route::get('/pdfTransApp','TransaksiController@pdfApp'); // NOT PROGRES !
 Route::get('/excelTransApp','TransaksiController@excelApp'); // NOT PROGRESS !

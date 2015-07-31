@@ -111,6 +111,15 @@ class TransaksiController extends Controller
         return view('admin.approve',compact('list_transaksi'));
     }
 
+//ganti status
+    public function GantiStatus($id){
+        $transaksi = Transaksi::find($id);
+        $transaksi->stt = '1';
+        $transaksi->save();
+
+        \Session::flash('flash_message','Status Telah Di Ganti Menjadi Approve');
+        return redirect('/pending');  
+    }
 
 
 //BATAS 

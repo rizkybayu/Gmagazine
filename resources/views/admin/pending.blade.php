@@ -52,7 +52,7 @@
                                             <td><center>{{$transaksi->jumlah_beli}}</center></td>
                                             <td><center>{{$transaksi->no_hp}}</center></td>
                                             <td class="center"><center>{{$transaksi->game ? $transaksi->game->nama_game : '' }}</center></td>
-                                            <td class="center"><button class="btn btn-warning">Pending</button></td>
+                                            <td class="center"><a href="{{ url('/GantiStatus',$transaksi->id) }}"><button class="btn btn-warning">Pending</button></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach
