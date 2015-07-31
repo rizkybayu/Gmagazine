@@ -100,6 +100,7 @@ Route::get('/excelTransPen','TransaksiController@excelPen'); // NOT PROGRESS !
 
 //ganti status
 Route::get('/GantiStatus/{id}','TransaksiController@GantiStatus'); //GANTI STATUS
+Route::get('/GantiStatusApp/{id}','TransaksiController@GantiStatusApp'); //GANTI STATUS
 
 Route::get('/pdfTransApp','TransaksiController@pdfApp'); // NOT PROGRES !
 Route::get('/excelTransApp','TransaksiController@excelApp'); // NOT PROGRESS !

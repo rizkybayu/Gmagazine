@@ -123,6 +123,14 @@ class TransaksiController extends Controller
         \Session::flash('flash_message','Status Telah Di Ganti Menjadi Approve');
         return redirect('/pending');  
     }
+    public function GantiStatusApp($id){
+        $transaksi = Transaksi::find($id);
+        $transaksi->stt = '0';
+        $transaksi->save();
+
+        \Session::flash('flash_message','Transaksi Telah Di Batalkan');
+        return redirect('/approve');  
+    }
 
 
 //BATAS 

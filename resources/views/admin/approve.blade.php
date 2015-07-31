@@ -55,7 +55,7 @@
                                             <td class="center"><center>{{$transaksi->game ? $transaksi->game->nama_game : '' }}</center></td>
                                             <!-- <td><center>{{ $transaksi->game ? $transaksi->jumlah_beli * $transaksi->game->harga : '' }}</center></td> -->
                                             <td><center><?php echo 'Rp. ' . number_format( $transaksi['jumlah_beli'] * $transaksi['game']['harga'], 0 , '' , '.' )?></center></td>
-                                            <td class="center"><button class="btn btn-primary">Approved</button></td>
+                                            <td class="center"><a href="{{ url('/GantiStatusApp',$transaksi->id) }}"><button class="btn btn-primary">Approved</button></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach
