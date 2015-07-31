@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2015-07-31 09:20:53
+Date: 2015-07-31 10:42:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -80,7 +80,7 @@ CREATE TABLE `tbl_game` (
   `tag` varchar(255) DEFAULT NULL,
   `id_kategori` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_game
@@ -112,7 +112,7 @@ CREATE TABLE `tbl_games` (
 INSERT INTO `tbl_games` VALUES ('1', 'Dead Rising', '50000', '10');
 INSERT INTO `tbl_games` VALUES ('2', 'Call of duty Black Ops', '90000', '20');
 INSERT INTO `tbl_games` VALUES ('4', 'Assasin Creed 2', '51000', '13');
-INSERT INTO `tbl_games` VALUES ('6', 'Ghost Buster', '20000', '9');
+INSERT INTO `tbl_games` VALUES ('6', 'Ghost Buster', '10000', '5');
 
 -- ----------------------------
 -- Table structure for tbl_kategori
@@ -122,7 +122,7 @@ CREATE TABLE `tbl_kategori` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_kategori
@@ -161,7 +161,7 @@ CREATE TABLE `tbl_transaksi` (
   `no_hp` varchar(255) DEFAULT NULL,
   `stt` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_transaksi
@@ -169,6 +169,8 @@ CREATE TABLE `tbl_transaksi` (
 INSERT INTO `tbl_transaksi` VALUES ('6', 'Fahmi Ahmad', 'fahmi@fahmi.com', '2015-07-31 01:04:11', '4', '4', '08726736726762', '1');
 INSERT INTO `tbl_transaksi` VALUES ('7', 'Frezi Rahzel', 'frezi@gmail.com', '2015-07-31 01:31:51', '3', '1', '0872767637673', '0');
 INSERT INTO `tbl_transaksi` VALUES ('8', 'Muhammad Rizal', 'rizal@gmail.com', '2015-07-31 02:19:53', '3', '6', '0871625625661', '0');
+INSERT INTO `tbl_transaksi` VALUES ('9', 'Mas Dewan', 'Dewan@Dewan.com', '2015-07-31 03:29:41', '4', '1', '08267267627', '1');
+INSERT INTO `tbl_transaksi` VALUES ('10', 'Mas Sohib', 'Sohib@master.com', '2015-07-31 03:40:59', '1', '1', '08727267267', '1');
 
 -- ----------------------------
 -- Table structure for users
