@@ -9,6 +9,7 @@ use App\Database\Model\Game;
 use App\Database\Model\Kategori;
 use App\Database\Model\Admin;
 use App\Database\Model\Gamez;
+use App\Database\Model\Transaksi;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
 use App\Http\Requests\ArtikelRequest;
@@ -35,7 +36,8 @@ class AdminController extends Controller
         $ambilArtikel = Game::get();
         $ambilAdmin = Admin::get();
         $ambilGame = Gamez::get();
-        return view('admin.home',compact('ambilArtikel','ambilAdmin','ambilGame'));
+        $ambilTransaksiPending = Transaksi::where('stt','0')->get();
+        return view('admin.home',compact('ambilArtikel','ambilAdmin','ambilGame','ambilTransaksiPending'));
     }
 
 //UNTUK ADMIN LOGIN

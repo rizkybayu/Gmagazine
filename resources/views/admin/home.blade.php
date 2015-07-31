@@ -41,7 +41,7 @@
                     <i class="fa fa-circle-o-notch"></i>
                 </span>
                 <div class="text-box">
-                    <center><p class="main-text">0</p></center>
+                    <center><p class="main-text">{{$ambilTransaksiPending->count()}}</p></center>
                     <center><p class="text-muted">Pending Transaksi</p></center>
                 </div>
              </div>

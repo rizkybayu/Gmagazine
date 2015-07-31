@@ -93,3 +93,7 @@ Route::post('/transaksi_simpan','TransaksiController@transaksiSimpan'); //proses
 //melihat proses transaksi
 Route::get('/pending','TransaksiController@lihatPending'); //melihat daftar transaksi yang pending
 Route::get('/approve','TransaksiController@lihatApprove'); //melihat daftar transaksi yang sudah di approve
+
+//eksport transaksi
+Route::get('/pdfTrans','TransaksiController@pdf'); // NOT PROGRES !
+Route::get('/excelTrans','TransaksiController@excel'); // NOT PROGRESS !
