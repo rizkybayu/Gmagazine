@@ -33,11 +33,12 @@
                                         <tr>
                                             <th width="2.5%">No</th>
                                             <th width="20%"><center>Nama Pembeli</center></th>
-                                            <th width="20%"><center>Email</center></th>
+                                            <th width="10%"><center>Email</center></th>
                                             <th width="15%"><center>Tanggal Beli</center></th>
-                                            <th width="15%"><center>Jumlah Beli</center></th>
+                                            <th width="10%"><center>Jumlah Beli</center></th>
                                             <th width="15%"><center>No Hp</center></th>
                                             <th width="15%"><center>Yang Di pesan</center></th>
+                                            <th width="15%"><center>Total</center></th>
                                             <th width="7.5%"><center>Status</center></th>
                                         </tr>
                                     </thead>
@@ -52,6 +53,8 @@
                                             <td><center>{{$transaksi->jumlah_beli}}</center></td>
                                             <td><center>{{$transaksi->no_hp}}</center></td>
                                             <td class="center"><center>{{$transaksi->game ? $transaksi->game->nama_game : '' }}</center></td>
+                                            <!-- <td><center>{{ $transaksi->game ? $transaksi->jumlah_beli * $transaksi->game->harga : '' }}</center></td> -->
+                                            <td><center><?php echo 'Rp. ' . number_format( $transaksi['jumlah_beli'] * $transaksi['game']['harga'], 0 , '' , '.' )?></center></td>
                                             <td class="center"><button class="btn btn-primary">Approved</button></td>
                                         </tr>
                                     <?php $a++;?>
