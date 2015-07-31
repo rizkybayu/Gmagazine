@@ -30,7 +30,7 @@
                     <i class="fa fa-check"></i>
                 </span>
                 <div class="text-box">
-                    <center><p class="main-text">0</p></center>
+                    <center><p class="main-text">{{$ambilTransaksiApprove->count()}}</p></center>
                     <center><p class="text-muted">Approve Transaksi</p></center>
                 </div>
              </div>

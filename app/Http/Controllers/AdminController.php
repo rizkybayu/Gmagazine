@@ -37,7 +37,8 @@ class AdminController extends Controller
         $ambilAdmin = Admin::get();
         $ambilGame = Gamez::get();
         $ambilTransaksiPending = Transaksi::where('stt','0')->get();
-        return view('admin.home',compact('ambilArtikel','ambilAdmin','ambilGame','ambilTransaksiPending'));
+        $ambilTransaksiApprove = Transaksi::where('stt','1')->get();
+        return view('admin.home',compact('ambilArtikel','ambilAdmin','ambilGame','ambilTransaksiPending','ambilTransaksiApprove'));
     }
 
 //UNTUK ADMIN LOGIN

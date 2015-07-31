@@ -95,5 +95,8 @@ Route::get('/pending','TransaksiController@lihatPending'); //melihat daftar tran
 Route::get('/approve','TransaksiController@lihatApprove'); //melihat daftar transaksi yang sudah di approve
 
 //eksport transaksi
-Route::get('/pdfTrans','TransaksiController@pdf'); // NOT PROGRES !
-Route::get('/excelTrans','TransaksiController@excel'); // NOT PROGRESS !
+Route::get('/pdfTransPen','TransaksiController@pdfPen'); // NOT PROGRES !
+Route::get('/excelTransPen','TransaksiController@excelPen'); // NOT PROGRESS !
+
+Route::get('/pdfTransApp','TransaksiController@pdfApp'); // NOT PROGRES !
+Route::get('/excelTransApp','TransaksiController@excelApp'); // NOT PROGRESS !

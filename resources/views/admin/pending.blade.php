@@ -51,7 +51,7 @@
                                             <td><center>{{$transaksi->tgl_beli}}</center></td>
                                             <td><center>{{$transaksi->jumlah_beli}}</center></td>
                                             <td><center>{{$transaksi->no_hp}}</center></td>
-                                            <td class="center">{{$transaksi->game ? $transaksi->game->nama_game : '' }}</td>
+                                            <td class="center"><center>{{$transaksi->game ? $transaksi->game->nama_game : '' }}</center></td>
                                             <td class="center"><button class="btn btn-warning">Pending</button></td>
                                         </tr>
                                     <?php $a++;?>
@@ -61,7 +61,7 @@
                             </div>
                         <center>
                         </center>
-                        <a href="{{ url('/pdf') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <a href="{{ url('/excel') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a>
+                        <a href="{{ url('/pdfTransPen') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <a href="{{ url('/excelTransPen') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a>
                         </div>
                     </div>
                     <!--End Advanced Tables -->
