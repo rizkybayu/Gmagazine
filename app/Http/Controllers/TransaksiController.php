@@ -97,6 +97,18 @@ class TransaksiController extends Controller
         return redirect('/beli');        
     }
 //BATAS TRANSAKSI
+
+
+
+//CEK TRANSAKSI
+    public function lihatPending(){
+        $list_transaksi = Transaksi::get();
+        return view('admin.pending',compact('list_transaksi'));
+    }
+
+
+
+//BATAS 
     /**
      * Show the form for creating a new resource.
      *

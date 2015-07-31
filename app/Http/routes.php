@@ -89,3 +89,7 @@ Route::put('/edit_game/{id}','TransaksiController@edit_game'); //proses edit gam
 
 Route::get('/transaksi/{id}','TransaksiController@transaksiView'); //view transaksi
 Route::post('/transaksi_simpan','TransaksiController@transaksiSimpan'); //proses save transaksi
+
+//melihat proses transaksi
+Route::get('/pending','TransaksiController@lihatPending'); //melihat daftar transaksi yang pending
+Route::get('/approve','TransaksiController@lihatApprove'); //melihat daftar transaksi yang sudah di approve

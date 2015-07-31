@@ -91,10 +91,10 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                         <a href="#"><i class="fa fa-money fa-3x"></i>Transaksi<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Approve</a>
+                                <a href="{{url('/approve')}}">Approve</a>
                             </li>
                             <li>
-                                <a href="#">Pending</a>
+                                <a href="{{url('/pending')}}">Pending</a>
                             </li>
                         </ul>
                       </li> 
