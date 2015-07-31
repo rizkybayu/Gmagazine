@@ -102,8 +102,13 @@ class TransaksiController extends Controller
 
 //CEK TRANSAKSI
     public function lihatPending(){
-        $list_transaksi = Transaksi::get();
+        $list_transaksi = Transaksi::where('stt','0')->get();
         return view('admin.pending',compact('list_transaksi'));
+    }
+
+    public function lihatApprove(){
+        $list_transaksi = Transaksi::where('stt','1')->get();
+        return view('admin.approve',compact('list_transaksi'));
     }
 
 
