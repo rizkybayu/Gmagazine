@@ -8,10 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GameRequest;
 use App\Http\Requests\GameRequestEdit;
+use App\Http\Requests\TransaksiRequest;
 use App\Database\Model\Gamez;
 use App\Database\Model\Transaksi;
-use Carbon;
-
+use Carbon\Carbon;
 class TransaksiController extends Controller
 {
     /**
@@ -80,6 +80,21 @@ class TransaksiController extends Controller
     public function transaksiView($id){
         $yangdipilih = Gamez::find($id);
         return view('transaksi',compact('yangdipilih'));
+    }
+
+    public function transaksiSimpan(TransaksiRequest $request){
+        $transaksi = new Transaksi();
+        $transaksi->fk_game=$request->input('id');
+        $transaksi->nama_pembeli=$request->input('nama');
+        $transaksi->tgl_beli = Carbon::now();
+        $transaksi->email=$request->input('email');
+        $transaksi->no_hp=$request->input('no_hp');
+        $transaksi->jumlah_beli=$request->input('jumbel');
+        $transaksi->stt='0';
+        $transaksi->save();
+
+        \Session::flash('flash_message','Transaksi Berhasil Silahkan Mentrasfer dan melakukan langkah selanjutnya');
+        return redirect('/beli');        
     }
 //BATAS TRANSAKSI
     /**

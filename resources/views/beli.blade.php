@@ -48,6 +48,13 @@
     <!-- Page Content -->
 <div class="container">
     <div class="row">
+                            <!-- NOTIFIKASI -->
+                                    @if(Session::has('flash_message'))
+                                        <div class="alert alert-success">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {{ Session::get('flash_message') }}</div>
+                                    @endif
+                        <!-- BATAS NOTIFIKASI -->
         <div class="col-sm-12 col-md-12 col-xs-12">
         <div class="row">
         @if(count($data) != 0)

@@ -87,4 +87,5 @@ Route::get('/hapusGame/{id}','TransaksiController@hapusGame'); //untuk menghapus
 Route::get('/editGame/{id}','TransaksiController@editGame'); //untuk memunculkan view edit game
 Route::put('/edit_game/{id}','TransaksiController@edit_game'); //proses edit game
 
-Route::get('/transaksi/{id}','TransaksiController@transaksiView');
+Route::get('/transaksi/{id}','TransaksiController@transaksiView'); //view transaksi
+Route::post('/transaksi_simpan','TransaksiController@transaksiSimpan'); //proses save transaksi

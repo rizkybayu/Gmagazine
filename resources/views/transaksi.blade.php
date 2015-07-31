@@ -46,8 +46,15 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
+                                <!-- NOTIFIKASI -->
+                                    @if(Session::has('flash_message'))
+                                        <div class="alert alert-success">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {{ Session::get('flash_message') }}</div>
+                                    @endif
+                        <!-- BATAS NOTIFIKASI -->
     <div class="col-lg-12">
-        {!! Form::open(array('url' => '#', 'method' => 'POST' ,'files' => true)) !!}
+        {!! Form::open(array('url' => 'transaksi_simpan', 'method' => 'POST' ,'files' => true)) !!}
         <!-- <form role="form"> -->
         <div class="form-group @if ($errors->has('nama_game')) has-error @endif">
             {!! Form::label('Game Yang Di Pilih :') !!}
@@ -76,7 +83,7 @@
             @if ($errors->has('jumbel')) <p class="help-block">{{ $errors->first('jumbel') }}</p> @endif
         </div>                                         
         <div class="col-sm-3" style="clear:both">
-        {!!Form::submit('Submit!',['class' => 'btn btn-default','name'=>'simpan']) !!}
+        {!!Form::submit('Beli!',['class' => 'btn btn-default','name'=>'simpan']) !!}
         <!-- <button type="submit" class="btn btn-default">Simpan</button> -->
         <button type="reset" class="btn btn-primary">Reset</button>
         </div>
