@@ -64,12 +64,18 @@
                                 </table>
                             </div>
                         <center>
+                            <nav style="clear:both">
+                                <div class="pagination">
+                                {!! str_replace('/?', '?', $list_transaksi->render()) !!}
+                                </div>
+                            </nav>
                         </center>
                         <a href="{{ url('/pdfTransPen') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <a href="{{ url('/excelTransPen') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a>
                         </div>
                     </div>
                     <!--End Advanced Tables -->
                 </div>
+
             </div>
                 <!-- /. ROW  -->
                 </div>
