@@ -89,7 +89,10 @@ Route::get('/editGame/{id}','TransaksiController@editGame'); //untuk memunculkan
 Route::put('/edit_game/{id}','TransaksiController@edit_game'); //proses edit game
 
 Route::get('/transaksi/{id}','TransaksiController@transaksiView'); //view transaksi
-Route::post('/transaksi_simpan','TransaksiController@transaksiSimpan'); //proses save transaksi
+Route::post('/transaksi_simpan/{id}','TransaksiController@transaksiSimpan'); //proses save transaksi
+//batal dan mengembalikan stok
+Route::get('/cancel/{id}','TransaksiController@cancel'); //cancel dan mengembalikan stok
+Route::get('/cancel2/{id}','TransaksiController@cancel2');
 
 //melihat proses transaksi
 Route::get('/pending','TransaksiController@lihatPending'); //melihat daftar transaksi yang pending

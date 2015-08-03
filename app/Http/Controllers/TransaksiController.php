@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\GameRequest;
 use App\Http\Requests\GameRequestEdit;
 use App\Http\Requests\TransaksiRequest;
+use App\Http\Requests\SisaStokRequest;
 use App\Database\Model\Gamez;
 use App\Database\Model\Transaksi;
 use Carbon\Carbon;
@@ -85,7 +86,8 @@ class TransaksiController extends Controller
         return view('transaksi',compact('yangdipilih'));
     }
 
-    public function transaksiSimpan(TransaksiRequest $request){
+    public function transaksiSimpan($id,TransaksiRequest $request ,SisaStokRequest $request2 ){
+        
         $transaksi = new Transaksi();
         $transaksi->fk_game=$request->input('id');
         $transaksi->nama_pembeli=$request->input('nama');
@@ -96,7 +98,14 @@ class TransaksiController extends Controller
         $transaksi->stt='0';
         $transaksi->save();
 
-        \Session::flash('flash_message','Transaksi Berhasil Silahkan Mentrasfer dan melakukan langkah selanjutnya');
+        $sisa_stok = Gamez::find($id);
+        $jumlah_beli=$request2->input('jumbel');
+        $jumlah_stok=$request2->input('stok');
+        $sisa_stok2 = $jumlah_stok - $jumlah_beli;
+        $sisa_stok->stok = $sisa_stok2;
+        $sisa_stok->save();
+
+        \Session::flash('flash_message','Transaksi Berhasil Silahkan Mentrasfer Sebesar dan melakukan langkah selanjutnya');
         return redirect('/beli');        
     }
 //BATAS TRANSAKSI
@@ -124,14 +133,49 @@ class TransaksiController extends Controller
         return redirect('/pending');  
     }
     public function GantiStatusApp($id){
-        $transaksi = Transaksi::find($id);
+        $transaksi = Transaksi::find($id);    
         $transaksi->stt = '0';
         $transaksi->save();
+
+        // // untuk mengembalikan stok
+        // $tambah_stok = Gamez::find($transaksi->fk_game);
+        // $gagal_pesan = $transaksi->jumlah_beli;
+        // $pengembalian_stok = $tambah_stok->stok;
+        // $tambah_stok->stok = $pengembalian_stok + $gagal_pesan;
+        // $tambah_stok->save();
+
+        \Session::flash('flash_message','Status Telah Di Ganti Menjadi Pending');
+        return redirect('/approve');  
+    }
+    public function cancel($id){
+        $transaksi = Transaksi::find($id);    
+        // untuk mengembalikan stok
+        $tambah_stok = Gamez::find($transaksi->fk_game);
+        $gagal_pesan = $transaksi->jumlah_beli;
+        $pengembalian_stok = $tambah_stok->stok;
+        $tambah_stok->stok = $pengembalian_stok + $gagal_pesan;
+        $tambah_stok->save();
+
+        $transaksi = Transaksi::find($id)->delete();
 
         \Session::flash('flash_message','Transaksi Telah Di Batalkan');
         return redirect('/approve');  
     }
 
+    public function cancel2($id){
+        $transaksi = Transaksi::find($id);    
+        // untuk mengembalikan stok
+        $tambah_stok = Gamez::find($transaksi->fk_game);
+        $gagal_pesan = $transaksi->jumlah_beli;
+        $pengembalian_stok = $tambah_stok->stok;
+        $tambah_stok->stok = $pengembalian_stok + $gagal_pesan;
+        $tambah_stok->save();
+
+        $transaksi = Transaksi::find($id)->delete();
+
+        \Session::flash('flash_message','Transaksi Telah Di Batalkan');
+        return redirect('/pending');  
+    }
 
 //BATAS 
 

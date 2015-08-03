@@ -54,12 +54,12 @@
                                     @endif
                         <!-- BATAS NOTIFIKASI -->
     <div class="col-lg-12">
-        {!! Form::open(array('url' => 'transaksi_simpan', 'method' => 'POST' ,'files' => true)) !!}
+        {!! Form::open(array('url' => ['transaksi_simpan',$yangdipilih], 'method' => 'POST' ,'files' => true , 'name' => 'myForm' , 'onsubmit' => 'return validateForm()')) !!}
         <!-- <form role="form"> -->
         <div class="form-group @if ($errors->has('nama_game')) has-error @endif">
             {!! Form::label('Game Yang Di Pilih :') !!}
             {!! Form::hidden('id',$yangdipilih->id,['class'=>'form-control','placeholder'=>'Masukan Nama Game','maxlength'=>'40']) !!}
-            {!! Form::text('nama_game',$yangdipilih->nama_game,['class'=>'form-control','placeholder'=>'Masukan Nama Game','maxlength'=>'40']) !!}
+            {!! Form::text('nama_game',$yangdipilih->nama_game,['class'=>'form-control','placeholder'=>'Masukan Nama Game','maxlength'=>'40' ,'readonly']) !!}
             @if ($errors->has('nama_game')) <p class="help-block">{{ $errors->first('nama_game') }}</p> @endif
         </div>
         <div class="form-group @if ($errors->has('nama')) has-error @endif">
@@ -81,7 +81,8 @@
             {!! Form::label('Jumlah Beli :') !!}
             {!! Form::text('jumbel',null,['class'=>'form-control','placeholder'=>'Masukan No Telephon','maxlength'=>'40']) !!}
             @if ($errors->has('jumbel')) <p class="help-block">{{ $errors->first('jumbel') }}</p> @endif
-        </div>                                         
+        </div>                    
+            {!! Form::hidden('stok',$yangdipilih->stok,['class'=>'form-control','placeholder'=>'Masukan No Telephon','maxlength'=>'40']) !!}                     
         <div class="col-sm-3" style="clear:both">
         {!!Form::submit('Beli!',['class' => 'btn btn-default','name'=>'simpan']) !!}
         <!-- <button type="submit" class="btn btn-default">Simpan</button> -->
@@ -93,4 +94,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+    function validateForm() {
+    var x = document.forms["myForm"]["jumbel"].value;
+    var y = document.forms["myForm"]["stok"].value;
+    if (x == null || x == "" || x == "0") {
+        alert("Data Harus Di Isi Dengan Benar");
+        return false;
+    }
+    }
+    function validateForm(){
+    var x = document.forms["myForm"]["jumbel"].value;
+    var y = document.forms["myForm"]["stok"].value;
+        if(x>=y){
+        alert("Pemesanan Melibihi Stok");
+        return false;
+    }
+    }
+    </script>
     <!-- /.container -->

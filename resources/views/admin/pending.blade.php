@@ -41,6 +41,7 @@
                                             <th width="15%"><center>Total</center></th>
                                             <!-- <th width="15%"><center>ex</center></th> -->
                                             <th width="7.5%"><center>Status</center></th>
+                                            <th width="7.5%"><center>Batal</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,11 +63,12 @@
                                             ?>
                                             <td><center><?php echo 'Rp. ' . number_format( $totrans , 0 , '' , '.' )?></center></td>
                                             <td class="center"><a href="{{ url('/GantiStatus',$transaksi->id) }}"><button class="btn btn-warning">Pending</button></td>
+                                            <td class="center"><center><a href="{{ url('/cancel2',$transaksi->id) }}"><i class="fa fa-times fa-2x"></i></a></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach
                                         <tr>
-                                            <td colspan="9"><b>TOTAL :</b>&nbsp;&nbsp;&nbsp;<?php echo 'Rp. ' . number_format( $tot , 0 , '' , '.' )?></td>
+                                            <td colspan="10"><b>TOTAL :</b>&nbsp;&nbsp;&nbsp;<?php echo 'Rp. ' . number_format( $tot , 0 , '' , '.' )?></td>
                                         </tr>
                                     </tbody>
                                 </table>
