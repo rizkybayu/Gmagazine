@@ -17,17 +17,7 @@
         <ul class="nav navbar-nav">
             <li><a href="{{url('/')}}">Berita</a></li>
             <li  class="active"><a href="{{ url('/beli') }}">Beli Games</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>                    
-                </ul>
-            </li>
+            <li><a href="{{ url('/cara') }}">Cara Pemesanan</a></li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
             <form action="{{ url('/cari') }}" method="POST" name="carii" class="navbar-form" role="search" onSubmit="return cekFile()">

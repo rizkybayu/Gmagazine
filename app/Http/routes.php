@@ -50,7 +50,8 @@ Route::group(['prefix' => 'gm-admin', 'middleware' => 'auth'], function()
 Route::get('/pdf','AdminController@pdf');
 Route::get('/excel','AdminController@excel');
 
-//grouping
+//cara pemesanan 
+Route::get('/cara','GameController@cara');
 
 
 // Route::get('/mimin','AdminController@login'); //untuk login admin

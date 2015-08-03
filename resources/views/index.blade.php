@@ -17,17 +17,7 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="{{url('/')}}">Berita</a></li>
             <li><a href="{{ url('/beli') }}">Beli Games</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>                    
-                </ul>
-            </li>
+            <li><a href="{{ url('/cara') }}">Cara Pemesanan</a></li>
         </ul>
         <div class="col-sm-3 col-md-3 pull-right">
             <form action="{{ url('/cari') }}" method="POST" name="carii" class="navbar-form" role="search" onSubmit="return cekFile()">
@@ -49,7 +39,7 @@
 <div id="wowslider-container1">
 <div class="ws_images"><ul>
         <li><img src="data1/images/1.jpg" alt="1" title="1" id="wows1_0"/></li>
-        <li><a href="http://wowslider.com"><img src="data1/images/2.jpg" alt="responsive carousel" title="2" id="wows1_1"/></a></li>
+        <li><a href="127.0.0.1"><img src="data1/images/2.jpg" alt="responsive carousel" title="2" id="wows1_1"/></a></li>
         <li><img src="data1/images/3.jpg" alt="3" title="3" id="wows1_2"/></li>
     </ul></div>
     <div class="ws_bullets"><div>
