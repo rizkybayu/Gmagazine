@@ -75,6 +75,10 @@ class GameController extends Controller
         //
     }
 
+    public function cara(){
+        return view('cara');
+    }
+
     /**
      * Display the specified resource.
      *
