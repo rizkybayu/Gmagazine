@@ -44,7 +44,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $a=1;?>
+                                    <?php $a=1; $tot = 0;?>
+                                    
                                     @foreach($list_transaksi as $transaksi)
                                         <tr class="gradeU">
                                             <td><?php echo $a; ?></td>
@@ -55,11 +56,18 @@
                                             <td><center>{{$transaksi->no_hp}}</center></td>
                                             <td class="center"><center>{{$transaksi->game ? $transaksi->game->nama_game : '' }}</center></td>
                                             <!-- <td><center>{{ $transaksi->game ? $transaksi->jumlah_beli * $transaksi->game->harga : '' }}</center></td> -->
-                                            <td><center><?php echo 'Rp. ' . number_format( $transaksi['jumlah_beli'] * $transaksi['game']['harga'], 0 , '' , '.' )?></center></td>
+                                            <?php
+                                                $totrans = $transaksi['jumlah_beli'] * $transaksi['game']['harga'];
+                                                $tot = $tot + $totrans; 
+                                            ?>
+                                            <td><center><?php echo 'Rp. ' . number_format( $totrans , 0 , '' , '.' )?></center></td>
                                             <td class="center"><a href="{{ url('/GantiStatus',$transaksi->id) }}"><button class="btn btn-warning">Pending</button></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach
+                                        <tr>
+                                            <td colspan="9"><b>TOTAL :</b>&nbsp;&nbsp;&nbsp;<?php echo 'Rp. ' . number_format( $tot , 0 , '' , '.' )?></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

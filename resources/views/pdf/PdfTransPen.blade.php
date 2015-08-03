@@ -15,7 +15,7 @@
 	}
 </style>
 <table class="demo">
-	<caption>Export PDF</caption>
+	<caption>Daftar Transaksi Pending</caption>
 	<tr>
 		<th>No</th>
 		<th>Nama Pembeli</th>
@@ -27,7 +27,7 @@
 		<th>Total</th>
 		<th>Status</th>
 	</tr>
-	<?php $a=1;?>
+	<?php $a=1; $tot=0;?>
        @foreach($list_pending as $game)
 	<tr>
 		<td><?php echo $a; ?></td>
@@ -37,9 +37,16 @@
 		<td>{{$game->jumlah_beli}}</td>
 		<td>{{$game->no_hp}}</td>
 		<td>{{$game->game ? $game->game->nama_game : '' }}</td>
-		<td><?php echo 'Rp. ' . number_format( $game['jumlah_beli'] * $game['game']['harga'], 0 , '' , '.' )?></td>
+                                            <?php
+                                                $totrans = $game['jumlah_beli'] * $game['game']['harga'];
+                                                $tot = $tot + $totrans; 
+                                            ?>
+		<td><?php echo 'Rp. ' . number_format( $totrans, 0 , '' , '.' )?></td>
 		<td>Pending</td>
 	</tr>
 	 <?php $a++;?>
 	@endforeach
+                                        <tr>
+                                            <td colspan="9"><b>TOTAL :</b>&nbsp;&nbsp;&nbsp;<?php echo 'Rp. ' . number_format( $tot , 0 , '' , '.' )?></td>
+                                        </tr>
 </table>
