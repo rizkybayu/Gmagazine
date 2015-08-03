@@ -102,12 +102,7 @@
     if (x == null || x == "" || x == "0") {
         alert("Data Harus Di Isi Dengan Benar");
         return false;
-    }
-    }
-    function validateForm(){
-    var x = document.forms["myForm"]["jumbel"].value;
-    var y = document.forms["myForm"]["stok"].value;
-        if(x>=y){
+    }else if(x>=y){
         alert("Pemesanan Melibihi Stok");
         return false;
     }
