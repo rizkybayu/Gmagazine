@@ -102,9 +102,6 @@
     if (x == null || x == "" || x == "0") {
         alert("Data Harus Di Isi Dengan Benar");
         return false;
-    }else if(x>=y){
-        alert("Pemesanan Melibihi Stok");
-        return false;
     }
     }
     </script>
