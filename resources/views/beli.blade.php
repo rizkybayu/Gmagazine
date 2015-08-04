@@ -54,8 +54,14 @@
                     <img src="{{ asset('images/games')}}/{{'game'.$game->id}}.jpg" class="img-responsive">
                     <h3>{{ $game->nama_game }}</h3>
                     <p>Harga : <?php echo 'Rp. ' . number_format( $game['harga'], 0 , '' , '.' )?></p>
-                    <p>Stok : {{$game->stok}}</p>
-                    <center><a href="{{url('/transaksi',$game->id)}}"><button class="btn btn-warning"><b>Pesan Sekarang!</b></button></a></center>
+                    <p>Stok : @if($game->stok=="0")
+                              {!! "<b style='color:red'>Habis</b>" !!}  
+                              @else
+                              {{ $game->stok }}
+                              <center><a href="{{url('/transaksi',$game->id)}}"><button class="btn btn-warning"><b>Pesan Sekarang!</b></button></a></center>
+                              @endif
+                    </p>
+                    
                 </div>
             </div>
         @endforeach

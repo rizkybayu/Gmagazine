@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2015-08-04 08:53:55
+Date: 2015-08-04 09:24:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -114,9 +114,9 @@ INSERT INTO `tbl_games` VALUES ('2', 'Call of duty Black Ops', '90000', '26');
 INSERT INTO `tbl_games` VALUES ('4', 'Assasin Creed 2', '51000', '12');
 INSERT INTO `tbl_games` VALUES ('6', 'Ghost Buster', '10000', '5');
 INSERT INTO `tbl_games` VALUES ('7', 'Battlefield 3', '90000', '50');
-INSERT INTO `tbl_games` VALUES ('8', 'Sniper Ghost Warrior', '60000', '30');
-INSERT INTO `tbl_games` VALUES ('9', 'Watchdogs', '120000', '45');
-INSERT INTO `tbl_games` VALUES ('10', 'Grid 2', '57000', '20');
+INSERT INTO `tbl_games` VALUES ('8', 'Sniper Ghost Warrior', '60000', '0');
+INSERT INTO `tbl_games` VALUES ('9', 'Watchdogs', '120000', '42');
+INSERT INTO `tbl_games` VALUES ('10', 'Grid 2', '57000', '19');
 
 -- ----------------------------
 -- Table structure for tbl_kategori
@@ -165,13 +165,16 @@ CREATE TABLE `tbl_transaksi` (
   `no_hp` varchar(255) DEFAULT NULL,
   `stt` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_transaksi
 -- ----------------------------
 INSERT INTO `tbl_transaksi` VALUES ('24', 'Rizky Bayu', 'rizkybayu66@gmail.com', '2015-08-03 09:04:42', '1', '4', '087231871', '0');
 INSERT INTO `tbl_transaksi` VALUES ('25', 'Purwa Darozatun', 'purwa@gmail.com', '2015-08-03 09:29:38', '2', '1', '0871562516', '1');
+INSERT INTO `tbl_transaksi` VALUES ('26', 'Masashi Kishimoto', 'masahashi@gmail.com', '2015-08-04 01:54:33', '3', '9', '08716266212', '1');
+INSERT INTO `tbl_transaksi` VALUES ('27', 'Jojon', 'jojon@gmail.com', '2015-08-04 01:56:30', '1', '10', '0872652652', '1');
+INSERT INTO `tbl_transaksi` VALUES ('28', 'Nurohman', 'nurohman@gmail.com', '2015-08-04 02:22:26', '10', '8', '0897727637', '0');
 
 -- ----------------------------
 -- Table structure for users
