@@ -28,7 +28,8 @@ class TransaksiRequest extends Request
             'nama' => 'required|min:3',
             'email'=>'required|email',
             'no_hp' => 'required',
-            'jumbel' => 'required'
+            'jumbel' => 'required',
+            'nama_game' => 'required'
         ];
     }
 }

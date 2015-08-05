@@ -80,6 +80,11 @@ class TransaksiController extends Controller
     }
 //BATAS 
 
+//TESTING
+    public function test(){
+        return view('chek');
+    }
+
 //TRANSAKSI
     public function transaksiView($id){
         $yangdipilih = Gamez::find($id);
@@ -101,12 +106,23 @@ class TransaksiController extends Controller
         $sisa_stok = Gamez::find($id);
         $jumlah_beli=$request2->input('jumbel');
         $jumlah_stok=$request2->input('stok');
+        $harga = $request2->input('harga');
         $sisa_stok2 = $jumlah_stok - $jumlah_beli;
         $sisa_stok->stok = $sisa_stok2;
         $sisa_stok->save();
 
-        \Session::flash('flash_message','Transaksi Berhasil Silahkan Mentrasfer Sebesar dan melakukan langkah selanjutnya');
-        return redirect('/beli');        
+        //front end checkout
+        $nama_t = $request->input('nama');
+        $tgl_t = Carbon::now();
+        $email_t = $request->input('email');
+        $no_t = $request->input('no_hp');
+        $jumbel_t = $request->input('jumbel');
+        $ngame_t = $request->input('nama_game');
+        $total = $jumlah_beli * $harga;
+
+        return view('chek',compact('nama_t','tgl_t','email_t','no_t','jumbel_t','ngame_t','total'));
+        // \Session::flash('flash_message','Transaksi Berhasil Silahkan Mentrasfer Sebesar dan melakukan langkah selanjutnya');
+        // return redirect('/beli');        
     }
 //BATAS TRANSAKSI
 

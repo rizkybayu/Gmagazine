@@ -51,7 +51,12 @@ function cekFile2() {
      }
 }
 </script>
-
+<style type="text/css">
+    @media print
+    {
+     #not-print { display: none; }
+    }
+    </style>
 </head>
 
 <body>

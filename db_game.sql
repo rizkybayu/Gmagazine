@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2015-08-04 09:24:42
+Date: 2015-08-05 10:06:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -80,7 +80,7 @@ CREATE TABLE `tbl_game` (
   `tag` varchar(255) DEFAULT NULL,
   `id_kategori` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_game
@@ -93,6 +93,7 @@ INSERT INTO `tbl_game` VALUES ('59', 'One piece warrior 3 Rilis !!', '<p>Kali in
 INSERT INTO `tbl_game` VALUES ('60', 'Crisis 3', '<p>The hunted becomes the hunter in the CryEngine-powered open-world shooter Crysis 3! Players take on the role of &#39;Prophet&#39; as he returns to New York in the year in 2047, only to discover that the city has been encased in a Nanodome created by the corrupt Cell Corporation. The New York City Liberty Dome is a veritable urban rainforest teeming with overgrown trees, dense swamplands and raging rivers. Within the Liberty Dome, seven distinct and treacherous environments become known as the Seven Wonders. This dangerous new world demands advanced weapons and tactics. Prophet will utilize a lethal composite bow, an enhanced Nanosuit and devastating alien tech to become the deadliest hunter on the planet.</p>\r\n\r\n<p>Prophet is on a revenge mission after uncovering the truth behind Cell Corporation&#39;s motives for building the quarantined Nanodomes. The citizens were told that the giant citywide structures were resurrected to protect the population and to cleanse these metropolises of the remnants of Ceph forces. In reality, the Nanodomes are CELL&#39;s covert attempt at a land and technology grab in their quest for global domination. With Alien Ceph lurking around every corner and human enemies on the attack, nobody is safe in the path of vengeance. Everyone is a target in Prophet&#39;s quest for retribution.</p>\r\n', 'Rizky Bayu', '2015-07-22', '#CRISIS3 #GAMEOFTHEDAY #FPS', '3');
 INSERT INTO `tbl_game` VALUES ('61', 'Meet Your Maker Bubar!', '<p><strong>IndoDota2&nbsp;</strong>&ndash; Meet Your Maker adalah salah satu tim Dota terbaik di dunia. Entah sudah berapa banyak piala yang mreka menangkan dari turnament besar yang diadakan di seluruh pelosok dunia. Gua sendiri sangat suka dengan cara khas bermain Maelk, sang kapten. Benar2 super jenius.</p>\r\n\r\n<p>Jadi ceritanya Meet Your Makers atau disingkat MYM dinyatakan bubar oleh Maelk sendiri setelah turnmanen Dota 2 International. Walaupun hasil yang mereka capai cukup memuaskan bagi tim dan juga para fans nya yaitu peringkat ke 4, tapi Maelk dan kawan2 tetap akan bubar juga.</p>\r\n\r\n<p>Menurut Maelk, setiap orang ingin menempuh jalannya masing2. Mungkin ada yang bergabung dengan tim besar lainnya, ada juga melanjutkan kehidupan nyata seperti bekerja dan kuliah. Tapi Maelk tidak menyinggung apapun tentang seseorang secara spesifik, ia hanya mengatakan bahwa masing2 dari mereka ingin masuk ke era baru dengan adanya game yang baru juga.</p>\r\n', 'Rizky Bayu', '2015-07-22', '#Dota2', '1');
 INSERT INTO `tbl_game` VALUES ('62', 'Spongebob Rilis', '<p>Dikabarkan nickgelodion akan membuat game yang bertemakan sponegbob kembali dan akan membuat fitur game yang sangat bagus&nbsp;dan asik untuk dimanakan oleh anak anak bahkan hingga orang dewasa , game ini dikabarkan diliris pada akhir Desember&nbsp;tersedia di pc dan ps3 dan ps4 , game spongebob ini bertemakan open world sehingga pemain bisa sangat puas mengililingi&nbsp;kota bikini bottom dan pemain juga juga membunuh warga sekitar menarik bukan ? ayo kita lihat saja nanti pada akhir desember ! :)</p>\r\n', 'Rizky Bayu', '2015-08-03', '#SPONGEBOB', '1');
+INSERT INTO `tbl_game` VALUES ('63', 'Jangan Main The Witcher 3 !', '<p>Setelah mengalami beberapa kali penundaan (terakhir pernah diumumkan bakal muncul Februari 2015) akhirnya CD Projekt RED memastikan merilis Action RPG epic mereka, The Witcher 3 Wild Hunt tahun ini juga, tepatnya pada 19 Mei 2015 untuk PC Windows, PS4 dan juga XOne. Sebagai salah satu game yang paling dinantikan tahun ini, kami yakin kalian selalu menunggu kabar terbaru dari aksi terakhir penyihir kharismatik Geralt of Rivia ini.</p>\r\n\r\n<p>Menjelang perilisannya, tiap minggu CD Projekt RED memutar beberapa&nbsp;trailer baru, yang untungnya meskipun dirangkai sekalipun kami yakin tetap tidak akan merusak momen penting dalam game yang diklaim bakal menyita hingga lebih dari 200 jam waktu permainan kalian ini. Kemudian kita juga berhasil mendapatkan beberapa screenshot versi konsolnya yang walaupun animasinya tidak mencapai 60 fps seperti versi PC-nya, tetap saja screenshot yang kami pasang di sepanjang artikel ini&nbsp;terlihat mengagumkan.</p>\r\n\r\n<p>Kemudian untuk trailernya, kita&nbsp;mulai&nbsp;dengan trailer gameplay-nya sepanjang 5 menit yang dirilis pekan lalu, serta&nbsp;memperlihatkan banyak fitur serta kisi-kisi cerita dari akhir petualangan Geralt of Rivia ini:</p>\r\n\r\n<p>Dalam The Witcher 3: Wild Hunt, Geralt of Rivia, pembunuh monster sewaan yang dikenal sangat profesional dalam pekerjaannya, mendapatkan kontrak kerja terbesar dalam hidupnya. Dia kini harus melacak Child of Prophecy, yang dianggap sebagai senjata hidup yang dipercaya mampu merubah dunia. Petualangan kalian mencakup wilayah Northern Realms, benua yang luas dipenuhi kota-kota perdagangan, masuk ke pulau misterius, melalui gunung berbahaya, hingga menjelajahi gua yang terpencil</p>\r\n', 'Rizky Bayu', '2015-08-05', '#TW3 ', '1');
 
 -- ----------------------------
 -- Table structure for tbl_games
@@ -104,19 +105,20 @@ CREATE TABLE `tbl_games` (
   `harga` int(255) DEFAULT NULL,
   `stok` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_games
 -- ----------------------------
 INSERT INTO `tbl_games` VALUES ('1', 'Dead Rising', '50000', '7');
 INSERT INTO `tbl_games` VALUES ('2', 'Call of duty Black Ops', '90000', '26');
-INSERT INTO `tbl_games` VALUES ('4', 'Assasin Creed 2', '51000', '12');
+INSERT INTO `tbl_games` VALUES ('4', 'Assasin Creed 2', '51000', '21');
 INSERT INTO `tbl_games` VALUES ('6', 'Ghost Buster', '10000', '5');
 INSERT INTO `tbl_games` VALUES ('7', 'Battlefield 3', '90000', '50');
 INSERT INTO `tbl_games` VALUES ('8', 'Sniper Ghost Warrior', '60000', '0');
 INSERT INTO `tbl_games` VALUES ('9', 'Watchdogs', '120000', '42');
 INSERT INTO `tbl_games` VALUES ('10', 'Grid 2', '57000', '19');
+INSERT INTO `tbl_games` VALUES ('11', 'Crisis 2', '42000', '35');
 
 -- ----------------------------
 -- Table structure for tbl_kategori
@@ -126,7 +128,7 @@ CREATE TABLE `tbl_kategori` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_kategori
@@ -165,7 +167,7 @@ CREATE TABLE `tbl_transaksi` (
   `no_hp` varchar(255) DEFAULT NULL,
   `stt` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tbl_transaksi
@@ -175,6 +177,7 @@ INSERT INTO `tbl_transaksi` VALUES ('25', 'Purwa Darozatun', 'purwa@gmail.com', 
 INSERT INTO `tbl_transaksi` VALUES ('26', 'Masashi Kishimoto', 'masahashi@gmail.com', '2015-08-04 01:54:33', '3', '9', '08716266212', '1');
 INSERT INTO `tbl_transaksi` VALUES ('27', 'Jojon', 'jojon@gmail.com', '2015-08-04 01:56:30', '1', '10', '0872652652', '1');
 INSERT INTO `tbl_transaksi` VALUES ('28', 'Nurohman', 'nurohman@gmail.com', '2015-08-04 02:22:26', '10', '8', '0897727637', '0');
+INSERT INTO `tbl_transaksi` VALUES ('40', 'Rizky Bayu Oktavian', 'rizkybayu66@gmail.com', '2015-08-05 02:57:04', '3', '4', '089636998', '1');
 
 -- ----------------------------
 -- Table structure for users
@@ -196,4 +199,4 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('1', 'restu', 'restu@javan.co.id', '$2y$10$9DNKIUhH80mGqSVCtbvUp.984MCuF5bd4LZpkhje4IPAM/4VorStK', 'PFNm4gfyqVgGIJbifJV9h2lJmrNbbdwIZoSMNi5T6dbrc3kto6LRSifjnKO5', '2015-07-14 09:01:51', '2015-07-27 08:10:53');
-INSERT INTO `users` VALUES ('2', 'Rizky Bayu', 'rizkybayu66@gmail.com', '$2y$10$qbwRMvXbVQclA6Z1R7WoAOWyx6RwP4OTf8BXe3LEuJd3w3Ae3dnuK', 'Fl2m3bwZlynGPCIYgojrtCibVJ5yugp4EPOY29a75VlyBxnW6tYb0vYZ84Uu', '2015-07-14 09:51:35', '2015-07-30 07:25:23');
+INSERT INTO `users` VALUES ('2', 'Rizky Bayu', 'rizkybayu66@gmail.com', '$2y$10$qbwRMvXbVQclA6Z1R7WoAOWyx6RwP4OTf8BXe3LEuJd3w3Ae3dnuK', 'Igz5EpyivNfBpJTOiLDUIHHPviwOs77yV5XyWMqB0axbhwdo9PoCruEK1oAw', '2015-07-14 09:51:35', '2015-08-04 10:19:29');

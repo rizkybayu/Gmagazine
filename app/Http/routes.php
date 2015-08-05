@@ -108,3 +108,9 @@ Route::get('/GantiStatusApp/{id}','TransaksiController@GantiStatusApp'); //GANTI
 
 Route::get('/pdfTransApp','TransaksiController@pdfApp'); // NOT PROGRES !
 Route::get('/excelTransApp','TransaksiController@excelApp'); // NOT PROGRESS !
+
+
+//UNTUK TESTING 
+Route::get('/test','TransaksiController@test'); // KHUSUS UNTUK TESTING
+//CHECK OUT
+Route::get('/chek','TransaksiController@check'); // untuk cek

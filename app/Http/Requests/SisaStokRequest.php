@@ -25,7 +25,8 @@ class SisaStokRequest extends Request
     {
         return [
             'jumbel' => 'required',
-            'stok' => 'required'
+            'stok' => 'required',
+            'harga' =>'required'
         ];
     }
 }

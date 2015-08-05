@@ -82,7 +82,8 @@
             {!! Form::text('jumbel',null,['class'=>'form-control','placeholder'=>'Masukan No Telephon','maxlength'=>'40']) !!}
             @if ($errors->has('jumbel')) <p class="help-block">{{ $errors->first('jumbel') }}</p> @endif
         </div>                    
-            {!! Form::hidden('stok',$yangdipilih->stok,['class'=>'form-control','placeholder'=>'Masukan No Telephon','maxlength'=>'40']) !!}                     
+            {!! Form::hidden('stok',$yangdipilih->stok,['class'=>'form-control','placeholder'=>'Masukan No Telephon','maxlength'=>'40']) !!} 
+            {!! Form::hidden('harga',$yangdipilih->harga,['class'=>'form-control','placeholder'=>'Masukan No Telephon','maxlength'=>'40' ,'readonly']) !!}                     
         <div class="col-sm-3" style="clear:both">
         {!!Form::submit('Beli!',['class' => 'btn btn-default','name'=>'simpan']) !!}
         <!-- <button type="submit" class="btn btn-default">Simpan</button> -->
