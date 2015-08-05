@@ -44,7 +44,13 @@
                                         <tr class="gradeU">
                                             <td><?php echo $a; ?></td>
                                             <td>{{$game->nama_game}}</td>
-                                            <td><!-- <div style="height:40px; overflow:hidden"> --><center>{{$game->stok}}</center></div></td>
+                                            <td><!-- <div style="height:40px; overflow:hidden"> --><center>
+                                                @if($game->stok <= "0")
+                                                    {!! "<b style='color:red'>Habis</b>" !!}  
+                                                @else
+                                                    {{ $game->stok }}
+                                                @endif
+                                            </center></td>
                                             <td class="center"><?php echo 'Rp. ' . number_format( $game['harga'], 0 , '' , '.' )?></td>
                                             <td class="center"><center><a href="{{url('/editGame',$game->id)}}"><i class="fa fa-pencil-square-o"></i></a> <a href="{{ url('/hapusGame',$game->id) }}"><i class="fa fa-trash"></i></a></center></td>
                                         </tr>
