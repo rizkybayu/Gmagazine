@@ -65,7 +65,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                                 <a href="{{url('/lihatkategori')}}">Daftar Kategori</a>
                             </li>
                             <li>
-                                <a href="{{url('/tambahkategori')}}'">Tambah Kategori</a>
+                                <a href="{{url('/tambahkategori')}}">Tambah Kategori</a>
                             </li>
                         </ul>
                       </li> 
