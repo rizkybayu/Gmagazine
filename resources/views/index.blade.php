@@ -85,7 +85,7 @@
         <center>
         <nav style="clear:both">
         <div class="pagination">
-            {!!$data->render()!!}
+            {!! str_replace('/?', '?', $data->render()) !!}
         </div>
         </nav>
         </center>

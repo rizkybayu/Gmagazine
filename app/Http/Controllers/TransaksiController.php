@@ -92,7 +92,13 @@ class TransaksiController extends Controller
     }
 
     public function transaksiSimpan($id,TransaksiRequest $request ,SisaStokRequest $request2 ){
-        
+
+        $bug1 = $request2->input('jumbel');
+        $bug2 = $request2->input('stok');
+        if($bug1 > $bug2){
+            \Session::flash('flash_message','Tidak bisa memesan karena melebihi jumlah stok');
+            return redirect()->back(); 
+        }else{
         $transaksi = new Transaksi();
         $transaksi->fk_game=$request->input('id');
         $transaksi->nama_pembeli=$request->input('nama');
@@ -110,17 +116,19 @@ class TransaksiController extends Controller
         $sisa_stok2 = $jumlah_stok - $jumlah_beli;
         $sisa_stok->stok = $sisa_stok2;
         $sisa_stok->save();
+        
+            $nama_t = $request->input('nama');
+            $tgl_t = Carbon::now();
+            $email_t = $request->input('email');
+            $no_t = $request->input('no_hp');
+            $jumbel_t = $request->input('jumbel');
+            $ngame_t = $request->input('nama_game');
+            $total = $jumlah_beli * $harga;
 
+            return view('chek',compact('nama_t','tgl_t','email_t','no_t','jumbel_t','ngame_t','total'));    
+        }
         //front end checkout
-        $nama_t = $request->input('nama');
-        $tgl_t = Carbon::now();
-        $email_t = $request->input('email');
-        $no_t = $request->input('no_hp');
-        $jumbel_t = $request->input('jumbel');
-        $ngame_t = $request->input('nama_game');
-        $total = $jumlah_beli * $harga;
-
-        return view('chek',compact('nama_t','tgl_t','email_t','no_t','jumbel_t','ngame_t','total'));
+        
         // \Session::flash('flash_message','Transaksi Berhasil Silahkan Mentrasfer Sebesar dan melakukan langkah selanjutnya');
         // return redirect('/beli');        
     }
