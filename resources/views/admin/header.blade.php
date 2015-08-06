@@ -50,10 +50,10 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                         <a href="#"><i class="fa fa-newspaper-o fa-3x"></i></i>Artikel<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/lihatartikel">Daftar Artikel</a>
+                                <a href="{{url('/lihatartikel')}}">Daftar Artikel</a>
                             </li>
                             <li>
-                                <a href="/tambahartikel">Tambah Artikel</a>
+                                <a href="{{url('/tambahartikel')}}">Tambah Artikel</a>
                             </li>
                         </ul>
                       </li> 
@@ -69,10 +69,10 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                         <a href="#"><i class="fa fa-tags fa-3x"></i>Kategori<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/lihatkategori">Daftar Kategori</a>
+                                <a href="{{url('/lihatkategori')}}">Daftar Kategori</a>
                             </li>
                             <li>
-                                <a href="/tambahkategori">Tambah Kategori</a>
+                                <a href="{{url('/tambahkategori"')}}'>Tambah Kategori</a>
                             </li>
                         </ul>
                       </li> 
