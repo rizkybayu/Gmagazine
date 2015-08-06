@@ -58,13 +58,6 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                         </ul>
                       </li> 
 
-<!--                       <li>
-                        <a  href="{{url('/lihatartikel')}}"><i class="fa fa-table fa-3x"></i>Daftar Artikel</a>
-                      </li>
-                    <li>
-                        <a class=""  href="{{url('/tambahartikel')}}"><i class="fa fa-edit fa-3x"></i>Tambah Artikel</a>
-                    </li>   -->
-
                       <li>
                         <a href="#"><i class="fa fa-tags fa-3x"></i>Kategori<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -72,7 +65,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                                 <a href="{{url('/lihatkategori')}}">Daftar Kategori</a>
                             </li>
                             <li>
-                                <a href="{{url('/tambahkategori"')}}'>Tambah Kategori</a>
+                                <a href="{{url('/tambahkategori')}}'">Tambah Kategori</a>
                             </li>
                         </ul>
                       </li> 
@@ -97,7 +90,8 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                                 <a href="{{url('/pending')}}">Pending</a>
                             </li>
                         </ul>
-                      </li> 
+                      </li>
+
 <!-- 
                       <li>
                         <a  href="{{url('/lihatkategori')}}"><i class="fa fa-table fa-3x"></i>Daftar Kategori</a>
