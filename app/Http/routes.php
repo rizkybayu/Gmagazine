@@ -109,6 +109,9 @@ Route::get('/GantiStatusApp/{id}','TransaksiController@GantiStatusApp'); //GANTI
 Route::get('/pdfTransApp','TransaksiController@pdfApp'); // NOT PROGRES !
 Route::get('/excelTransApp','TransaksiController@excelApp'); // NOT PROGRESS !
 
+//untuk laporan
+Route::get('/viewport','AdminController@viewPort'); //untuk menu awal view
+Route::post('/report','AdminController@report');//untuk proses report
 
 //UNTUK TESTING 
 Route::get('/test','TransaksiController@test'); // KHUSUS UNTUK TESTING

@@ -16,6 +16,10 @@
     <link rel="SHORTCUT ICON" href="{{asset('images/fav.png')}}" type="image/x-icon"/>
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+   <!-- ini datepicker -->
+
+   <!-- batas ini datepicker -->
 </head>
 <body>
     <div id="wrapper">
@@ -80,6 +84,7 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                             </li>
                         </ul>
                       </li> 
+                      
                       <li>
                         <a href="#"><i class="fa fa-money fa-3x"></i>Transaksi<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -91,6 +96,9 @@ font-size: 16px;"> {{ date('F d, Y') }} &nbsp; <a href="{{ url('/auth/logout') }
                             </li>
                         </ul>
                       </li>
+                    <li>
+                        <a  href="{{url('/viewport')}}"><i class="fa fa-bar-chart fa-3x"></i>Report</a>
+                    </li>
 
 <!-- 
                       <li>

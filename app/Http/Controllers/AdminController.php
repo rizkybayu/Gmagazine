@@ -13,6 +13,7 @@ use App\Database\Model\Transaksi;
 use App\Database\Model\Slider;
 use Carbon\Carbon;
 use App\Http\Requests\ArtikelRequest;
+use App\Http\Requests\ReportRequest;
 use App\Http\Requests\UbahRequest;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
@@ -208,5 +209,21 @@ public function excel(){
     public function hmm()
     {
         user::create(['email' => 'restu@javan.co.id', 'password' => Hash::make('restu'), 'name' => 'restu']);
+    }
+
+    public function viewPort(){
+        return view('admin.viewport');
+    }
+
+    public function report(ReportRequest $request){
+        $mulai_tgl = $request->input('dari_tanggal');
+        $sampai_tgl = $request->input('sampai_tanggal');
+
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )->paginate(10);
+        return view('admin.report',compact('list_transaksi'));
+            // $list_transaksi = Transaksi::where('stt','1')->paginate(10);
+            // return view('admin.approve',compact('list_transaksi')); 
+
+     
     }
 }

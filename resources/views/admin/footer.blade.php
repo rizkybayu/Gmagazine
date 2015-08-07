@@ -1,6 +1,7 @@
+    <!--ini date picker -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="{{asset('admin/js/jquery-1.10.2.js')}}"></script>
+    <script src="{{asset('js/new-jq.js')}}"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
     <!-- METISMENU SCRIPTS -->
@@ -13,7 +14,7 @@
     <!--ck editor -->
     <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript" src="{{asset('ckeditor/style.js')}}"></script>
-    
-   
+
+
 </body>
 </html>
