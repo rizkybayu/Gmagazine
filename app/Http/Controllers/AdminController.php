@@ -211,6 +211,8 @@ public function excel(){
         user::create(['email' => 'restu@javan.co.id', 'password' => Hash::make('restu'), 'name' => 'restu']);
     }
 
+
+//Report Custom
     public function viewPort(){
         return view('admin.viewport');
     }
@@ -218,12 +220,38 @@ public function excel(){
     public function report(ReportRequest $request){
         $mulai_tgl = $request->input('dari_tanggal');
         $sampai_tgl = $request->input('sampai_tanggal');
+        $filter = $request->input('filter');
 
-        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )->paginate(10);
-        return view('admin.report',compact('list_transaksi'));
+        if($filter == "0"){
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
+                        ->where('stt','0')
+                        ->get();
+                        return view('admin.report',compact('list_transaksi'));
+        }elseif($filter == "1"){
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
+                        ->where('stt','1')
+                        ->get();
+                        return view('admin.report',compact('list_transaksi'));
+        }else{
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
+                        ->get();
+                        return view('admin.report',compact('list_transaksi'));
+        }
+        
             // $list_transaksi = Transaksi::where('stt','1')->paginate(10);
             // return view('admin.approve',compact('list_transaksi')); 
-
-     
     }
+
+    // public function pdfReport(ReportRequest $request){
+    //     $filter = $request->input('filter');
+    //     $list_export= Transaksi::where('stt',$filter)->get();
+
+    //     $pdf = PDF::loadView('pdf.PdfReportFinal', compact('list_export'));
+    //     return $pdf->download('ExportPdftransPending'.Carbon::now().'.pdf');
+     
+    // }
+    // public function excelReport(){
+
+    // }
+   
 }

@@ -25,7 +25,8 @@ class ReportRequest extends Request
     {
         return [
             'dari_tanggal' => 'required',
-            'dari_tanggal' => 'required'
+            'dari_tanggal' => 'required',
+            'filter'       => 'required'
         ];
     }
 }

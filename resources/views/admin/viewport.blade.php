@@ -40,10 +40,17 @@
                                             {!! Form::label('Sampai Tanggal :') !!}
                                             {!! Form::text('sampai_tanggal',null,['class'=>'form-control','placeholder'=>'Akhir Tanggal','maxlength'=>'40','id'=>'dp2']) !!}
                                             @if ($errors->has('sampai_tanggal')) <p class="help-block">{{ $errors->first('sampai_tanggal') }}</p> @endif
-                                        </div>                                        
-                                                                       
+                                        </div>
+                                        <div class="col-sm-2">
+                                        {!! Form::label('Status :') !!}  
+                                        <select class="form-control" name="filter">
+                                                <option value="0">Pending</option>
+                                                <option value="1">Approved</option>
+                                                <option value="3">Semua</option>
+                                            </select>  
+                                        </div>                                                                   
                                         <div class="col-sm-3" style="clear:both">
-                                        {!!Form::submit('Submit!',['class' => 'btn btn-default','name'=>'simpan']) !!}
+                                        <br>{!!Form::submit('Submit!',['class' => 'btn btn-default','name'=>'simpan']) !!}
                                         <!-- <button type="submit" class="btn btn-default">Simpan</button> -->
                                         <button type="reset" class="btn btn-primary">Reset</button>
                                         </div>
@@ -65,7 +72,7 @@
         </div>
      <!-- /. WRAPPER  -->
 <script>
-            $(function () {
+            $(document).ready(function(){
                 window.prettyPrint && prettyPrint();
                 $('#dp1').fdatepicker({
                     format: 'yyyy-mm-dd',

@@ -41,7 +41,6 @@
                                             <th width="15%"><center>Total</center></th>
                                             <!-- <th width="15%"><center>ex</center></th> -->
                                             <th width="7.5%"><center>Status</center></th>
-                                            <th width="7.5%"><center>Batal</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,7 +67,6 @@
                                             <button class="btn btn-primary">Approved</button>
                                             @endif
                                             </td>
-                                            <td class="center"><center><a href="{{ url('/cancel2',$transaksi->id) }}"><i class="fa fa-times fa-2x"></i></a></td>
                                         </tr>
                                     <?php $a++;?>
                                     @endforeach
@@ -78,14 +76,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                        <center>
-                            <nav style="clear:both">
-                                <div class="pagination">
-                                {!! str_replace('/?', '?', $list_transaksi->render()) !!}
-                                </div>
-                            </nav>
-                        </center>
-                        <a href="{{ url('/pdfTransPen') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <a href="{{ url('/excelTransPen') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a>
+
+                        <!-- <a href="{{ url('/pdfReport') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <a href="{{ url('/excelReport') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a> -->
                         </div>
                     </div>
                     <!--End Advanced Tables -->
