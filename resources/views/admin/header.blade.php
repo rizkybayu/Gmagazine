@@ -18,7 +18,16 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
    <!-- ini datepicker -->
-
+        <!-- foundation datepicker start -->
+            <!-- DEPS -->
+                <script src="http://code.jquery.com/jquery.min.js"></script>
+                <!-- CDN - you can use font awesome or fonudation icon via this, or use your own version: -->
+                    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+            <!-- DATEPICKER FILES -->
+            <script src="{{asset('dp/js/foundation-datepicker.min.js')}}"></script>
+            <link rel="stylesheet" href="{{ asset('dp/css/foundation-datepicker.min.css')}}">
+        <!-- foundation datepicker end -->
    <!-- batas ini datepicker -->
 </head>
 <body>

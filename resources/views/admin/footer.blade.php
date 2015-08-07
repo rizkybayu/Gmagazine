@@ -2,6 +2,8 @@
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="{{asset('js/new-jq.js')}}"></script>
+    <script src="{{asset('dp/js/foundation-datepicker.js')}}"></script>
+    <script src="{{asset('dp/js/foundation-datepicker.min.js')}}"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
     <!-- METISMENU SCRIPTS -->
