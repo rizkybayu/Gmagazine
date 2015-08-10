@@ -112,7 +112,7 @@ Route::get('/excelTransApp','TransaksiController@excelApp'); // NOT PROGRESS !
 //untuk laporan
 Route::get('/viewport','AdminController@viewPort'); //untuk menu awal view
 Route::post('/report','AdminController@report');//untuk proses report
-Route::get('/pdfReport','AdminController@pdfReport'); // untuk membuat report laporan dari pdf custom date
+Route::post('/pdfReport','AdminController@pdfReport'); // untuk membuat report laporan dari pdf custom date
 Route::get('/excelReport','AdminController@excelReport'); //untuk membuat report laporan dari excel custom date
 
 //UNTUK TESTING 

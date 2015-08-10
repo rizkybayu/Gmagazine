@@ -14,6 +14,7 @@ use App\Database\Model\Slider;
 use Carbon\Carbon;
 use App\Http\Requests\ArtikelRequest;
 use App\Http\Requests\ReportRequest;
+use App\Http\Requests\PdfReportRequest;
 use App\Http\Requests\UbahRequest;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
@@ -223,35 +224,74 @@ public function excel(){
         $filter = $request->input('filter');
 
         if($filter == "0"){
+        $filter2 = $request->input('filter');
+        $mulai_tgl2 = $request->input('dari_tanggal');
+        $sampai_tgl2 = $request->input('sampai_tanggal');
         $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
                         ->where('stt','0')
                         ->get();
-                        return view('admin.report',compact('list_transaksi'));
+                        return view('admin.report',compact('list_transaksi','filter2','mulai_tgl2','sampai_tgl2'));
         }elseif($filter == "1"){
+        $filter2 = $request->input('filter');
+        $mulai_tgl2 = $request->input('dari_tanggal');
+        $sampai_tgl2 = $request->input('sampai_tanggal');
         $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
                         ->where('stt','1')
                         ->get();
-                        return view('admin.report',compact('list_transaksi'));
+                        return view('admin.report',compact('list_transaksi','filter2','mulai_tgl2','sampai_tgl2'));
         }else{
+        $filter2 = $request->input('filter');
+        $mulai_tgl2 = $request->input('dari_tanggal');
+        $sampai_tgl2 = $request->input('sampai_tanggal');
         $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
                         ->get();
-                        return view('admin.report',compact('list_transaksi'));
+                        return view('admin.report',compact('list_transaksi','filter2','mulai_tgl2','sampai_tgl2'));
         }
         
             // $list_transaksi = Transaksi::where('stt','1')->paginate(10);
             // return view('admin.approve',compact('list_transaksi')); 
     }
 
-    // public function pdfReport(ReportRequest $request){
-    //     $filter = $request->input('filter');
-    //     $list_export= Transaksi::where('stt',$filter)->get();
+    public function pdfReport(PdfReportRequest $request){
+         // $filter_output = $request->input('filter_ambil');
+        // // $list_export= Transaksi::where('stt',$filter)->get();
+        // return view('admin.report',compact('list_transaksi'))
+        // $list_export= Transaksi::where('stt',$filter_output)->get();
 
-    //     $pdf = PDF::loadView('pdf.PdfReportFinal', compact('list_export'));
-    //     return $pdf->download('ExportPdftransPending'.Carbon::now().'.pdf');
+        // dd($filter_output);
+
+
+        //inisialisasi 
+        $filter_output = $request->input('filter_ambil');
+        $mulai_tgl = $request->input('tgl_awal');
+        $sampai_tgl = $request->input('tgl_akhir');
+        //batas inisialisasi
+        
+        if($filter_output == "0"){
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
+                        ->where('stt','0')
+                        ->get();
+
+        $pdf = PDF::loadView('pdf.ReportFinal', compact('list_transaksi'));
+        return $pdf->download('FinalExport'.Carbon::now().'.pdf');
+
+        }elseif($filter_output == "1"){
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
+                        ->where('stt','1')
+                        ->get();
+                $pdf = PDF::loadView('pdf.ReportFinal', compact('list_transaksi'));
+                return $pdf->download('FinalExport'.Carbon::now().'.pdf');
+        }else{
+        $list_transaksi = Transaksi::whereBetween('tgl_beli', [$mulai_tgl, $sampai_tgl] )
+                        ->get();
+                $pdf = PDF::loadView('pdf.ReportFinal', compact('list_transaksi'));
+                return $pdf->download('FinalExport'.Carbon::now().'.pdf');
+        }
+
      
-    // }
-    // public function excelReport(){
+    }
+    public function excelReport(){
 
-    // }
+    }
    
 }

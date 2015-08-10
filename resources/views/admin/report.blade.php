@@ -4,7 +4,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Transaksi Pending</h2>   
+                     <h2>Laporan Transaksi</h2>   
                         <h5>Selamat Datang {{ Auth::user()->name }}</h5>
                        
                     </div>
@@ -77,7 +77,14 @@
                                 </table>
                             </div>
 
-                        <!-- <a href="{{ url('/pdfReport') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> <a href="{{ url('/excelReport') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a> -->
+                            <form action="{{ url('/pdfReport') }}" method="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" value="{{ $filter2 }}" name="filter_ambil">
+                            <input type="hidden" value="{{ $mulai_tgl2 }}" name="tgl_awal">
+                            <input type="hidden" value="{{ $sampai_tgl2 }}" name="tgl_akhir">
+                            <input type="submit" value="Export Ke PDF" class="btn btn-primary">
+                        <!-- <a href="{{ url('/pdfReport') }}"><button type="button" class="btn btn-primary">Export Ke PDF</button></a> -->
+                        </form> <!-- <a href="{{ url('/excelReport') }}"><button type="button" class="btn btn-primary">Export ke Excel</button></a> -->
                         </div>
                     </div>
                     <!--End Advanced Tables -->
