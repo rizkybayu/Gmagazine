@@ -23,7 +23,7 @@
             <form action="{{ url('/cari') }}" method="POST" name="carii" class="navbar-form" role="search" onSubmit="return cekFile()">
                 <div class="input-group">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="text" class="form-control" placeholder="Search" name="cari1">
+                    <input type="text" class="form-control" placeholder="Search" name="cari1" id="Ms_cari">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -95,5 +95,34 @@
     <!-- /.container -->
 
     <!--footer-->
+
+<!-- Modal -->
+    <div class="modal fade" id="help">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Keyboard Shortcut</h4>
+          </div>
+
+          <div class="modal-body">
+            <table>
+                <tr>
+                    <td width="80"><span class="label label-default">?</span></td>
+                    <td width="200">Help</td>
+                    <td width="60"><span class="label label-default">t</span></td>
+                    <td width="200">Share to tweet</td>
+                </tr>
+                <tr>
+                    <td><span class="label label-default">/</span></td>
+                    <td>Search Post</td>
+                </tr>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
 @include('footer')
     <!--end footer-->
